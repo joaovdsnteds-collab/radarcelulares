@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ============================================ -->
+  <!-- METADADOS DE PRÉVIA PARA REDES SOCIAIS (OG)  -->
+  <!-- ============================================ -->
+  <title>Radar Celulares | Assistência Técnica e Vendas</title>
+  <meta name="description" content="Pioneira em assistência técnica de celulares e tablets em São Luís de Montes Belos - GO. Desde 2001 oferecendo serviços de confiança e qualidade.">
+  
+  <meta property="og:title" content="Radar Celulares | Assistência & Vendas">
+  <meta property="og:description" content="Seu celular em boas mãos! Assistência de confiança, acessórios e venda de novos e seminovos em São Luís de Montes Belos.">
+  <meta property="og:type" content="website">
+  
+  <!-- Imagem de prévia configurada para a logo no WhatsApp -->
+  <meta property="og:image" content="radar.png">
+  <meta property="og:image:secure_url" content="radar.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="300">
+  <meta property="og:image:height" content="300">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fontes do Google: Sora (Moderna) e Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            display: ['Sora', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#FAFAFC',            // Fundo Off-White tecnológico limpo
+              card: '#FFFFFF',          // Cards brancos de alto contraste
+              blue: '#27146F',          // Azul Escuro/Índigo institucional da Radar
+              blueHover: '#1B0D52',     // Hover do azul escuro
+              orange: '#F25207',        // Laranja Vivo de destaque comercial
+              orangeHover: '#D34200',   // Hover do laranja
+              mutedBlue: '#F0EFF8',     // Fundo azulado muito suave
+              lightOrange: '#FFF1EB',   // Fundo laranja suave para badges
+              textDark: '#120A2E',      // Azul-escuro quase preto para contraste legível
+              textMuted: '#5C5670'      // Tom acinzentado-azul para descrições secundárias
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Revelação ao rolar */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Vidro soft (Glassmorphism de Alta Tecnologia) */
+    .glass-effect {
+      background: rgba(250, 250, 252, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    
+    /* Barra de rolagem personalizada */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAFAFC;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27146F;
+      border-radius: 3px;
+    }
+
+    /* Brilho sofisticado nos cards */
+    .glow-brand-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glow-brand-hover:hover {
+      box-shadow: 0 15px 30px -10px rgba(39, 20, 111, 0.08);
+      border-color: rgba(242, 82, 7, 0.3);
+    }
+
+    /* Carrossel Infinito */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee-reviews {
+      display: flex;
+      width: max-content;
+      animation: marquee 45s linear infinite;
+    }
+    .animate-marquee-reviews:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-brand-textDark font-sans selection:bg-brand-orange/20 selection:text-brand-textDark antialiased overflow-hidden">
+
+  <!-- TELA DE APRESENTAÇÃO (SPLASH SCREEN INTRO COM BARRA E CONTADOR 0-100) -->
+  <div id="splashScreen" class="fixed inset-0 bg-brand-bg z-50 flex items-center justify-center transition-all duration-1000 ease-in-out">
+    <div class="text-center flex flex-col items-center px-4 w-full max-w-xs">
+      
+      <!-- Símbolo no Splash -->
+      <div id="splashLogo" class="w-32 h-24 overflow-hidden transform scale-110 transition-all duration-1000 ease-out flex items-center justify-center">
+        <img src="radar.png" alt="Logotipo Radar Celulares" class="w-full h-full object-contain">
+      </div>
+      
+      <!-- Barra metálica de carregamento ativa -->
+      <div class="w-32 h-[2px] bg-brand-mutedBlue rounded-full mt-6 overflow-hidden relative">
+        <div id="splashProgressBar" class="absolute inset-y-0 left-0 bg-brand-orange w-0 rounded-full transition-all duration-100 ease-out"></div>
+      </div>
+      
+      <!-- Contador de Porcentagem 0 a 100 -->
+      <div class="mt-2 min-h-[14px]">
+        <span id="splashCounter" class="text-[10px] font-bold text-brand-blue tracking-wider">0%</span>
+      </div>
+      
+      <div id="splashText" class="mt-2 opacity-0 translate-y-4 transition-all duration-1000 delay-300">
+        <span class="font-display text-[9px] tracking-[0.3em] text-brand-blue font-bold uppercase">Desde 2001</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL (REVELADO APÓS INTRO) -->
+  <div id="mainContent" class="opacity-0 transition-opacity duration-1000 ease-in-out">
+    
+    <!-- CABEÇALHO -->
+    <header class="sticky top-0 z-40 w-full glass-effect border-b border-brand-mutedBlue transition-all duration-300">
+      <div class="max-w-5xl mx-auto px-4 h-20 flex items-center justify-between">
+        
+        <!-- Identidade Visual do Topo -->
+        <a href="#" class="flex items-center space-x-3 h-12">
+          <img src="radar.png" alt="Radar Celulares" class="h-10 w-auto object-contain">
+        </a>
+
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex items-center space-x-8 text-[10px] uppercase tracking-widest font-semibold text-brand-textMuted">
+          <a href="#servicos" class="hover:text-brand-orange transition-colors">Serviços</a>
+          <a href="#sobre" class="hover:text-brand-orange transition-colors">Quem Somos</a>
+          <a href="#avaliacoes" class="hover:text-brand-orange transition-colors">Avaliações</a>
+          <a href="#localizacao" class="hover:text-brand-orange transition-colors">Contato</a>
+        </div>
+
+        <!-- Ações Rápidas do Topo -->
+        <div class="flex items-center space-x-2">
+          <button onclick="downloadVCard()" class="p-2 w-9 h-9 rounded-full bg-brand-card hover:bg-brand-mutedBlue border border-brand-mutedBlue text-brand-blue transition-colors flex items-center justify-center shadow-sm" title="Salvar Contato no Celular">
+            <i class="fa-solid fa-address-book text-xs"></i>
+          </button>
+          <button id="openShareBtn" class="p-2 w-9 h-9 rounded-full bg-brand-card hover:bg-brand-mutedBlue border border-brand-mutedBlue text-brand-blue transition-colors flex items-center justify-center shadow-sm" title="Compartilhar Cartão">
+            <i class="fa-solid fa-share-nodes text-xs"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SPLIT COM DETALHES DE ASSISTÊNCIA -->
+    <section class="relative pt-8 pb-12 px-4 overflow-hidden">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-blue/5 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+      
+      <div class="max-w-5xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-6">
+        
+        <!-- Bloco de Texto (Esquerda) -->
+        <div class="flex-1 text-center lg:text-left space-y-5">
+          <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-2">
+            <span class="inline-flex items-center gap-1 bg-brand-lightOrange text-brand-orange border border-brand-orange/20 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+              <i class="fa-solid fa-circle text-[5px] text-brand-orange animate-pulse"></i> Assistência de Confiança
+            </span>
+            <span class="inline-flex items-center gap-1 bg-brand-mutedBlue text-brand-blue border border-brand-blue/20 text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+              <i class="fa-solid fa-award"></i> Pioneira desde 2001
+            </span>
+          </div>
+
+          <div class="space-y-3">
+            <h1 class="hidden">Radar Celulares - Assistência Técnica Especializada</h1>
+            <img src="radar.png" alt="Radar Celulares" class="mx-auto lg:mx-0 max-w-[260px] sm:max-w-[300px] h-auto object-contain">
+            <p class="text-xs uppercase tracking-[0.3em] text-brand-orange font-bold">Assistência Técnica & Venda de Aparelhos</p>
+          </div>
+
+          <p class="text-[11px] md:text-xs text-brand-textMuted leading-relaxed max-w-md mx-auto lg:mx-0">
+            Especialistas em conserto e manutenção de celulares, tablets e outros dispositivos. Agilidade, peças de qualidade e a garantia de quem está há mais de duas décadas no coração de São Luís de Montes Belos.
+          </p>
+        </div>
+
+        <!-- Bloco da Imagem Principal (Direita - Ivan trabalhando) -->
+        <div class="flex-1 w-full max-w-xs lg:max-w-none flex justify-center">
+          <div class="relative w-64 sm:w-72">
+            <!-- Detalhe geométrico de fundo -->
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[92%] bg-gradient-to-b from-brand-mutedBlue via-brand-mutedBlue/50 to-brand-bg rounded-t-full border border-brand-orange/15 -z-10"></div>
+            
+            <!-- Foto de Ivan Trabalhando -->
+            <img src="ivan.jpeg" alt="Ivan José Vieira - Técnico Responsável" 
+                 class="w-[90%] h-auto rounded-t-full object-contain mx-auto drop-shadow-[0_15px_30px_rgba(39,20,111,0.12)] transform transition-transform duration-700 hover:scale-[1.02]">
+            
+            <!-- Selo de História Flutuante -->
+            <div class="absolute bottom-4 right-1 bg-brand-card/95 backdrop-blur-sm border border-brand-orange/30 rounded-2xl p-3 shadow-md max-w-[120px] z-20">
+              <p class="text-sm font-display font-bold text-brand-blue leading-none">25 Anos</p>
+              <p class="text-[8px] text-brand-textMuted font-semibold uppercase tracking-wider mt-1 leading-tight">de excelência e pioneirismo</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAINEL DE ATALHOS RÁPIDOS -->
+    <section class="max-w-4xl mx-auto px-4 pb-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        
+        <!-- Atalho 1: WhatsApp Agendar Orçamento -->
+        <button onclick="openWhatsAppBudget('Conserto')" 
+                class="flex flex-col items-center justify-center p-4 bg-brand-orange hover:bg-brand-orangeHover text-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 text-center group">
+          <div class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center mb-2.5 text-white">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </div>
+          <span class="block text-[10px] font-bold uppercase tracking-wider">Solicitar Orçamento</span>
+          <span class="block text-[8px] text-brand-lightOrange/90 mt-0.5 font-medium leading-none">Via WhatsApp</span>
+        </button>
+
+        <!-- Atalho 2: Área do Pix -->
+        <button onclick="openPixModal()" 
+                class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm glow-brand-hover transition-all duration-300 text-center group">
+          <div class="w-9 h-9 rounded-full bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-2.5">
+            <i class="fa-brands fa-pix text-base"></i>
+          </div>
+          <span class="block text-[10px] font-bold text-brand-textDark uppercase tracking-wider">Área de Pagamento</span>
+          <span class="block text-[8px] text-brand-textMuted mt-0.5 font-medium leading-none">PIX Chave Celular</span>
+        </button>
+
+        <!-- Atalho 3: Como Chegar -->
+        <a href="https://maps.google.com/?q=Av.+Hermogenes+Coelho,+2056+-+Centro,+S%C3%A3o+Lu%C3%ADs+de+Montes+Belos+-+GO" target="_blank" rel="noopener noreferrer" 
+           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm glow-brand-hover transition-all duration-300 text-center group">
+          <div class="w-9 h-9 rounded-full bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-2.5">
+            <i class="fa-solid fa-route text-sm"></i>
+          </div>
+          <span class="block text-[10px] font-bold text-brand-textDark uppercase tracking-wider">Como Chegar</span>
+          <span class="block text-[8px] text-brand-textMuted mt-0.5 font-medium leading-none">Localização no Centro</span>
+        </a>
+
+        <!-- Atalho 4: Avaliar no Google -->
+        <button onclick="openGoogleReview()" 
+           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm glow-brand-hover transition-all duration-300 text-center group">
+          <div class="w-9 h-9 rounded-full bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-2.5">
+            <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+          </div>
+          <span class="block text-[10px] font-bold text-brand-textDark uppercase tracking-wider">Avaliar Loja</span>
+          <span class="block text-[8px] text-brand-textMuted mt-0.5 font-medium leading-none">Deixe sua Opinião</span>
+        </button>
+
+      </div>
+
+      <!-- INDICADOR VISUAL DE ROLAGEM -->
+      <div id="scrollIndicator" class="flex flex-col items-center justify-center pt-6 pb-1 text-brand-textMuted text-[9px] uppercase tracking-[0.25em] font-bold transition-all duration-500">
+        <span>Veja nossos serviços abaixo</span>
+        <i class="fa-solid fa-chevron-down mt-1 animate-bounce text-[10px] text-brand-orange"></i>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE SERVIÇOS (ESPAÇO OTIMIZADO) -->
+    <section id="servicos" class="max-w-5xl mx-auto px-4 pt-4 pb-8 md:py-12 reveal">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-orange font-bold block mb-1">Especialidades</span>
+        <h2 class="font-display text-xl md:text-2xl text-brand-textDark font-bold uppercase">Nossos Serviços</h2>
+        <p class="text-[11px] text-brand-textMuted mt-2">Profissionais altamente capacitados. Escolha a solução que precisa e inicie seu atendimento online.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Troca de Tela -->
+        <button onclick="openWhatsAppBudget('Troca de Tela')" 
+                class="w-full text-left p-6 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/30 rounded-3xl shadow-sm glow-brand-hover flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-5 transition-all group-hover:bg-brand-blue group-hover:text-white shadow-sm">
+              <i class="fa-solid fa-mobile-screen-button text-base"></i>
+            </div>
+            <h3 class="text-xs font-bold text-brand-textDark uppercase tracking-wider mb-2">Troca de Tela</h3>
+            <p class="text-[11px] text-brand-textMuted leading-relaxed">Substituição de displays quebrados, trincados ou sem toque, utilizando componentes de alta fidelidade e com total garantia de serviço.</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-[9px] font-bold text-brand-orange uppercase tracking-widest">
+            <span>Pedir Orçamento</span>
+            <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1.5 transition-transform"></i>
+          </div>
+        </button>
+
+        <!-- Troca de Bateria -->
+        <button onclick="openWhatsAppBudget('Troca de Bateria')" 
+                class="w-full text-left p-6 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/30 rounded-3xl shadow-sm glow-brand-hover flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-5 transition-all group-hover:bg-brand-blue group-hover:text-white shadow-sm">
+              <i class="fa-solid fa-battery-three-quarters text-base"></i>
+            </div>
+            <h3 class="text-xs font-bold text-brand-textDark uppercase tracking-wider mb-2">Troca de Bateria</h3>
+            <p class="text-[11px] text-brand-textMuted leading-relaxed">Seu celular descarrega rápido? Trocamos sua bateria antiga por uma nova com excelente saúde de carga e desempenho estável.</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-[9px] font-bold text-brand-orange uppercase tracking-widest">
+            <span>Trocar Bateria</span>
+            <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1.5 transition-transform"></i>
+          </div>
+        </button>
+
+        <!-- Reparos e Desbloqueio -->
+        <button onclick="openWhatsAppBudget('Manutenção e Desbloqueio')" 
+                class="w-full text-left p-6 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/30 rounded-3xl shadow-sm glow-brand-hover flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-5 transition-all group-hover:bg-brand-blue group-hover:text-white shadow-sm">
+              <i class="fa-solid fa-screwdriver-wrench text-base"></i>
+            </div>
+            <h3 class="text-xs font-bold text-brand-textDark uppercase tracking-wider mb-2">Reparos e Desbloqueio</h3>
+            <p class="text-[11px] text-brand-textMuted leading-relaxed">Tratamento para danos por água, consertos em botões, conectores de carga, auto-falantes e serviços em placas.</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-[9px] font-bold text-brand-orange uppercase tracking-widest">
+            <span>Consultar Defeito</span>
+            <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1.5 transition-transform"></i>
+          </div>
+        </button>
+
+        <!-- Aparelhos Novos e Seminovos -->
+        <button onclick="openWhatsAppBudget('Compra/Venda de Aparelhos')" 
+                class="w-full text-left p-6 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/30 rounded-3xl shadow-sm glow-brand-hover flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-5 transition-all group-hover:bg-brand-blue group-hover:text-white shadow-sm">
+              <i class="fa-solid fa-shop text-base"></i>
+            </div>
+            <h3 class="text-xs font-bold text-brand-textDark uppercase tracking-wider mb-2">Novos & Seminovos</h3>
+            <p class="text-[11px] text-brand-textMuted leading-relaxed">Venda de smartphones lacrados e seminovos totalmente revisados, homologados pela ANATEL e com garantia técnica.</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-[9px] font-bold text-brand-orange uppercase tracking-widest">
+            <span>Ver Aparelhos</span>
+            <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1.5 transition-transform"></i>
+          </div>
+        </button>
+
+        <!-- Capinhas, Películas e Acessórios -->
+        <button onclick="openWhatsAppBudget('Acessórios')" 
+                class="w-full text-left p-6 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/30 rounded-3xl shadow-sm glow-brand-hover flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-5 transition-all group-hover:bg-brand-blue group-hover:text-white shadow-sm">
+              <i class="fa-solid fa-plug text-base"></i>
+            </div>
+            <h3 class="text-xs font-bold text-brand-textDark uppercase tracking-wider mb-2">Acessórios em Geral</h3>
+            <p class="text-[11px] text-brand-textMuted leading-relaxed">A maior variedade de capinhas, películas de vidro/cerâmica de alta resistência, cabos rápidos e carregadores certificados.</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-[9px] font-bold text-brand-orange uppercase tracking-widest">
+            <span>Consultar Modelos</span>
+            <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1.5 transition-transform"></i>
+          </div>
+        </button>
+
+        <!-- Variedades (Óculos e Cosméticos) -->
+        <button onclick="openWhatsAppBudget('Óculos e Cosméticos')" 
+                class="w-full text-left p-6 bg-brand-card hover:bg-brand-bg border border-brand-mutedBlue hover:border-brand-orange/30 rounded-3xl shadow-sm glow-brand-hover flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-5 transition-all group-hover:bg-brand-blue group-hover:text-white shadow-sm">
+              <i class="fa-solid fa-glasses-face text-base"></i>
+            </div>
+            <h3 class="text-xs font-bold text-brand-textDark uppercase tracking-wider mb-2">Óculos & Cosméticos</h3>
+            <p class="text-[11px] text-brand-textMuted leading-relaxed">Possuímos também uma linha dedicada de óculos de sol/grau e cosméticos de qualidade para o seu bem-estar diário.</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-[9px] font-bold text-brand-orange uppercase tracking-widest">
+            <span>Consultar Linha</span>
+            <i class="fa-solid fa-arrow-right text-[8px] transform group-hover:translate-x-1.5 transition-transform"></i>
+          </div>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- DETALHES DE ENDEREÇO E HORÁRIOS -->
+    <section id="localizacao" class="max-w-5xl mx-auto px-4 py-8 md:py-16 reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Horários de Atendimento -->
+        <div class="bg-brand-card p-6 md:p-8 rounded-3xl border border-brand-mutedBlue flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-10 h-10 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-4">
+              <i class="fa-regular fa-clock text-lg"></i>
+            </div>
+            <h3 class="text-sm font-bold text-brand-textDark uppercase tracking-wider mb-2">Horários de Atendimento</h3>
+            <p class="text-[11px] text-brand-textMuted mb-4">Venha nos visitar no horário comercial ou solicite suporte no WhatsApp:</p>
+            
+            <div class="space-y-3 text-[11px] text-brand-textDark pt-2">
+              <div class="flex justify-between border-b border-dashed border-brand-mutedBlue pb-2.5">
+                <span class="font-semibold">Segunda a Sexta-feira</span>
+                <span class="text-brand-orange font-bold">08:00 às 18:00</span>
+              </div>
+              <div class="flex justify-between border-b border-dashed border-brand-mutedBlue pb-2.5">
+                <span class="font-semibold">Sábado</span>
+                <span class="text-brand-orange font-bold">08:00 às 13:00</span>
+              </div>
+              <div class="flex justify-between pb-1">
+                <span class="font-semibold">Domingo</span>
+                <span class="text-brand-textMuted italic">Fechado</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="openWhatsAppBudget('Atendimento Geral')" class="mt-6 w-full py-3 bg-brand-bg hover:bg-brand-mutedBlue text-brand-blue font-bold text-[10px] uppercase tracking-wider rounded-xl border border-brand-mutedBlue transition-colors flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp"></i> Falar com Suporte Online
+          </button>
+        </div>
+
+        <!-- Localização Física Detalhada -->
+        <div class="bg-brand-card p-6 md:p-8 rounded-3xl border border-brand-mutedBlue flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-10 h-10 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-4">
+              <i class="fa-solid fa-map-location-dot text-lg"></i>
+            </div>
+            <h3 class="text-sm font-bold text-brand-textDark uppercase tracking-wider mb-2">Nossa Loja Física</h3>
+            <p class="text-[11px] text-brand-textMuted mb-4">Toda a infraestrutura de bancada técnica e loja no coração da cidade.</p>
+            
+            <div class="bg-brand-bg p-4 rounded-xl border border-brand-mutedBlue text-[11px] space-y-1.5 text-brand-textDark">
+              <p class="font-bold text-brand-blue"><i class="fa-solid fa-store mr-1"></i> Radar Celulares</p>
+              <p>Av. Hermogenes Coelho, nº 2056 - Centro</p>
+              <p>São Luís de Montes Belos - GO • CEP: 76050-375</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2 mt-6">
+            <a href="https://maps.google.com/?q=Av.+Hermogenes+Coelho,+2056+-+Centro,+S%C3%A3o+Lu%C3%ADs+de+Montes+Belos+-+GO" target="_blank" rel="noopener noreferrer" 
+               class="w-full py-3 bg-brand-blue hover:bg-brand-blueHover text-white text-center font-bold text-[10px] uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
+              <i class="fa-solid fa-route"></i> Traçar Rota no GPS
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SEÇÃO DE DEPOIMENTOS GOOGLE 5 ESTRELAS      -->
+    <!-- ============================================ -->
+    <section id="avaliacoes" class="py-16 bg-brand-card border-y border-brand-mutedBlue overflow-hidden relative reveal">
+      <div class="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-brand-bg to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-brand-bg to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="max-w-5xl mx-auto px-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="text-left">
+          <span class="text-xs uppercase tracking-[0.25em] text-brand-orange font-bold block mb-1">Quem confia recomenda</span>
+          <h2 class="font-display text-xl md:text-2xl text-brand-textDark font-bold uppercase">Opinião dos Clientes</h2>
+        </div>
+        <button onclick="openGoogleReview()" class="text-[9px] uppercase tracking-wider text-brand-blue font-bold bg-brand-mutedBlue border border-brand-blue/20 px-3.5 py-1.5 rounded-full hover:bg-brand-blue hover:text-white transition-colors">
+          Avaliar no Google <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+        </button>
+      </div>
+
+      <!-- Carrossel de Depoimentos Lento -->
+      <div class="relative w-full flex overflow-x-hidden">
+        
+        <div class="animate-marquee-reviews flex space-x-6 pr-5">
+          <!-- Orceni Tertodacunha -->
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Meu celular travou, ele arrumou em pouco tempo. Esperei e trouxe meu celular."</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                O
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Orceni Tertodacunha</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arthur SOUZA NETO -->
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Excelente atendimento !!! Rápido e de qualidade!!!"</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                A
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Arthur SOUZA NETO</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jose De Jesus -->
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Muito boa. 3 celulares já comprei. Eu recomendo."</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-sm">
+                J
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Jose De Jesus</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gerson Pereira da Silva -->
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Trouxe meu celular poço fone com defeito, arrumaram e ficou batuta. Recomendo."</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-slate-600 text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                G
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Gerson Pereira da Silva</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Joana NOGUEIRA -->
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Levei meu celular condenado por outros, eles arrumaram e ficou top."</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                J
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Joana NOGUEIRA</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Isaque Peres -->
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"melhor loja que já comprei na vida, melhor preço, o dono de la nao perde vendas, exelente."</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-cyan-600 text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                I
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Isaque Peres</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicador de Loop do Carrossel de Depoimentos -->
+        <div class="animate-marquee-reviews flex space-x-6 pr-5" aria-hidden="true">
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Meu celular travou, ele arrumou em pouco tempo. Esperei e trouxe meu celular."</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                O
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Orceni Tertodacunha</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Excelente atendimento !!! Rápido e de qualidade!!!"</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm">
+                A
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Arthur SOUZA NETO</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 mb-3.5">
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+                <i class="fa-solid fa-star text-xs"></i>
+              </div>
+              <p class="text-[11px] text-brand-textDark italic leading-relaxed font-medium">"Muito boa. 3 celulares já comprei. Eu recomendo."</p>
+            </div>
+            <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
+              <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-sm">
+                J
+              </div>
+              <div>
+                <h4 class="text-[10px] font-bold text-brand-textDark">Jose De Jesus</h4>
+                <p class="text-[8px] text-brand-textMuted uppercase tracking-wider font-semibold">Avaliação Google</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS (FOTO DE IVAN E DETALHES DE HISTÓRIA) -->
+    <section id="sobre" class="max-w-5xl mx-auto px-4 py-8 md:py-16 reveal">
+      <div class="bg-brand-card rounded-[32px] p-6 md:p-12 shadow-sm border border-brand-mutedBlue flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        
+        <!-- Foto de Ivan enquadrada -->
+        <div class="w-56 h-72 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 border border-brand-orange bg-brand-bg relative group">
+          <img src="ivan.jpeg" alt="Ivan José Vieira - Fundador" class="w-full h-full object-cover object-center relative z-10 transition-transform duration-700 group-hover:scale-[1.03]">
+          <div class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-brand-card/95 backdrop-blur-sm border border-brand-mutedBlue text-[8px] uppercase tracking-widest text-brand-blue px-4 py-1.5 rounded-full z-20 font-bold whitespace-nowrap">
+            Ivan José Vieira
+          </div>
+        </div>
+
+        <!-- Conteúdo Textual -->
+        <div class="flex-1 text-left space-y-4">
+          <h2 class="font-display text-2xl md:text-3xl text-brand-textDark font-bold uppercase leading-tight">Radar Celulares</h2>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-brand-bg text-brand-textDark text-[10px] rounded-full font-bold border border-brand-mutedBlue">Fundada em 2001</span>
+            <span class="px-3 py-1 bg-brand-bg text-brand-textDark text-[10px] rounded-full font-bold border border-brand-mutedBlue">São Luís de M. Belos - GO</span>
+          </div>
+
+          <p class="text-brand-textMuted text-xs leading-relaxed">
+            Sob o comando do proprietário e técnico responsável <strong>Ivan José Vieira</strong>, a Radar Celulares se consolidou como uma das referências históricas e pioneiras em assistência técnica na região.
+          </p>
+          <p class="text-brand-textMuted text-xs leading-relaxed">
+            Há <strong>25 anos</strong> no mercado, o compromisso de Ivan é entregar um trabalho limpo, transparente e rápido. Na Radar, compreendemos que o seu celular é o seu principal elo de comunicação e trabalho, por isso operamos com maquinários e peças de excelente procedência e oferecemos atendimento direto, justo e humanizado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER DE ENGAJAMENTO DO INSTAGRAM -->
+    <section class="max-w-5xl mx-auto px-4 pb-12 reveal">
+      <div class="bg-brand-card p-6 md:p-8 rounded-[24px] border border-brand-mutedBlue shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div class="space-y-2">
+          <span class="text-[9px] uppercase tracking-widest text-brand-orange font-bold block">Novidades e Promoções</span>
+          <h3 class="font-display text-base text-brand-textDark font-bold uppercase">Siga @radarcelulares no Instagram</h3>
+          <p class="text-[11px] text-brand-textMuted max-w-lg">Confira dicas de conservação, novos modelos disponíveis e bastidores dos reparos no nosso perfil oficial.</p>
+        </div>
+        <a href="https://www.instagram.com/radarcelulares/" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold text-[10px] uppercase tracking-widest rounded-full transition-all shadow-md shrink-0">
+          <i class="fa-brands fa-instagram text-sm"></i> Seguir Perfil
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER LUXO COM CRÉDITOS -->
+    <footer class="bg-brand-card text-brand-textDark py-16 px-4 border-t border-brand-mutedBlue relative overflow-hidden text-center">
+      <div class="max-w-5xl mx-auto flex flex-col items-center gap-8 relative z-10">
+        
+        <!-- Logo e Símbolo -->
+        <div class="flex flex-col items-center">
+          <div class="h-12 mb-3">
+            <img src="radar.png" alt="Logo Radar Celulares" class="h-full w-auto object-contain mx-auto">
+          </div>
+          <p class="text-[9px] text-brand-textMuted mt-4 max-w-xs leading-relaxed uppercase tracking-[0.3em] font-semibold">
+            Confiança • Tecnologia • Qualidade
+          </p>
+        </div>
+
+        <!-- Links de Rodapé -->
+        <div class="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-wider text-brand-textMuted font-semibold">
+          <button onclick="openWhatsAppBudget('Atendimento')" class="hover:text-brand-orange transition-colors">Orçamentos</button>
+          <a href="https://maps.google.com/?q=Av.+Hermogenes+Coelho,+2056+-+Centro,+S%C3%A3o+Lu%C3%ADs+de+Montes+Belos+-+GO" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors">Localização</a>
+          <a href="#servicos" class="hover:text-brand-orange transition-colors">Nossos Serviços</a>
+          <button onclick="openGoogleReview()" class="hover:text-brand-orange transition-colors">Deixar Avaliação</button>
+        </div>
+
+        <!-- Divisor sutil -->
+        <div class="w-16 h-[1px] bg-brand-orange/20"></div>
+
+        <!-- Copyright -->
+        <div class="text-[9px] text-brand-textMuted space-y-2">
+          <p class="font-medium">Radar Celulares | Assistência Especializada e Acessórios</p>
+          <p>São Luís de Montes Belos - GO • Av. Hermogenes Coelho, nº 2056</p>
+          <p>&copy; <span id="currentYear"></span> Radar Celulares. Todos os direitos reservados.</p>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <button onclick="openWhatsAppBudget('Suporte Rápido')"
+       class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group hover:scale-105"
+       aria-label="Falar no WhatsApp">
+      <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-20 animate-ping" aria-hidden="true"></span>
+      <i class="fa-brands fa-whatsapp text-2xl relative z-10"></i>
+    </button>
+
+  </div>
+
+
+  <!-- MODAL PIX INTERATIVO COM QR CODE -->
+  <div id="pixModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-brand-card w-full max-w-sm rounded-3xl overflow-hidden shadow-xl border border-brand-mutedBlue transform scale-95 transition-transform duration-300">
+      
+      <div class="bg-brand-bg p-5 text-center relative border-b border-brand-mutedBlue">
+        <button onclick="closePixModal()" class="absolute top-4 right-4 text-brand-textMuted hover:text-brand-orange transition-colors">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <div class="w-12 h-12 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mx-auto mb-2">
+          <i class="fa-brands fa-pix text-xl"></i>
+        </div>
+        <h4 class="font-display text-xs text-brand-textDark font-bold uppercase tracking-wider">Área de Pagamento PIX</h4>
+        <p class="text-[10px] text-brand-textMuted mt-1">Copie nossa chave de telefone ou gere um código com valor</p>
+      </div>
+
+      <div class="p-6 space-y-4">
+        
+        <div class="bg-brand-bg p-3 rounded-xl text-[10px] space-y-1 text-brand-textMuted border border-brand-mutedBlue">
+          <p><strong class="text-brand-textDark">Beneficiário:</strong> Ivan Jose Vieira</p>
+          <p><strong class="text-brand-textDark">Chave Celular:</strong> (64) 98112-2821</p>
+          <p><strong class="text-brand-textDark">Banco:</strong> Mercado Pago IP Ltda.</p>
+        </div>
+
+        <button id="copyPhonePixBtn" onclick="copyPhoneKeyOnly()" 
+                class="w-full py-3 px-4 bg-brand-orange hover:bg-brand-orangeHover text-white rounded-xl text-[10px] font-bold tracking-widest uppercase transition-all flex items-center justify-center gap-2">
+          <i class="fa-solid fa-copy"></i> Copiar Chave Celular
+        </button>
+
+        <div class="relative flex py-1 items-center">
+          <div class="flex-grow border-t border-dashed border-brand-mutedBlue"></div>
+          <span class="flex-shrink mx-3 text-[8px] text-brand-textMuted uppercase tracking-widest font-semibold">Código com Valor</span>
+          <div class="flex-grow border-t border-dashed border-brand-mutedBlue"></div>
+        </div>
+
+        <!-- Formulário de Simulação de Valor -->
+        <div class="space-y-3">
+          <div>
+            <label for="pixAmount" class="block text-[8px] font-bold text-brand-textMuted mb-1 uppercase tracking-wider">Valor do Serviço / Produto</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2 text-[11px] text-brand-textMuted font-medium">R$</span>
+              <input type="number" id="pixAmount" placeholder="0,00" step="0.01" min="0" 
+                     class="w-full pl-8 pr-3 py-2 bg-brand-bg border border-brand-mutedBlue rounded-xl text-xs text-brand-textDark focus:ring-1 focus:ring-brand-blue focus:outline-none">
+            </div>
+          </div>
+
+          <button onclick="generateFunctionalPix()" 
+                  class="w-full py-2.5 px-4 bg-brand-card hover:bg-brand-bg text-brand-blue border border-brand-blue rounded-xl text-[10px] font-bold tracking-widest uppercase transition-all">
+            Gerar Copia e Cola & QR Code
+          </button>
+        </div>
+
+        <!-- Campo do Código Gerado e QR Code Real -->
+        <div id="generatedPixSection" class="hidden space-y-3 pt-2 border-t border-brand-mutedBlue">
+          <div class="flex flex-col items-center justify-center p-3 bg-brand-bg rounded-xl border border-brand-mutedBlue">
+            <img id="pixQrImage" src="" alt="QR Code PIX para pagamento" class="w-28 h-28 border p-1 bg-white rounded-lg">
+            <span class="text-[8px] text-brand-textMuted tracking-widest uppercase font-bold mt-1.5">Aponte o app do banco para pagar</span>
+          </div>
+          
+          <div>
+            <label class="block text-[8px] font-bold text-brand-textMuted mb-1">Código Copia e Cola</label>
+            <div class="flex items-center gap-2">
+              <input type="text" id="pixCodeDisplay" readonly 
+                     class="flex-1 p-2 bg-brand-bg border border-brand-mutedBlue rounded-lg text-[9px] font-mono text-brand-textMuted focus:outline-none">
+              <button onclick="copyGeneratedPixCode()" class="p-2 bg-brand-mutedBlue text-brand-blue rounded-lg text-xs hover:bg-brand-blue hover:text-white transition-colors" title="Copiar código">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL DE COMPARTILHAMENTO -->
+  <div id="shareModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-brand-card w-full max-w-sm rounded-3xl overflow-hidden shadow-xl border border-brand-mutedBlue transform scale-95 transition-transform duration-300 flex flex-col">
+      
+      <div class="p-5 flex items-center justify-between border-b border-brand-mutedBlue bg-brand-bg">
+        <h4 class="font-display text-xs text-brand-textDark font-bold uppercase tracking-wider">Compartilhar Contato</h4>
+        <button onclick="closeShareModal()" class="w-8 h-8 rounded-full bg-brand-card flex items-center justify-center text-brand-textMuted hover:text-brand-orange border border-brand-mutedBlue shadow-sm transition-all" aria-label="Fechar">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div class="p-5 space-y-3 max-h-[70vh] overflow-y-auto">
+        
+        <!-- QR Code -->
+        <div>
+          <button onclick="toggleShareQrCode()" class="w-full flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-brand-mutedBlue flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                <i class="fa-solid fa-qrcode text-base"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-textDark">Visualizar QR Code</span>
+            </div>
+            <i id="qrArrow" class="fa-solid fa-chevron-right text-[10px] text-brand-blue transition-transform duration-300"></i>
+          </button>
+          <div id="shareQrContainer" class="hidden mt-2 p-4 bg-brand-bg border border-brand-mutedBlue rounded-xl flex flex-col items-center justify-center gap-2">
+            <img id="shareQrImage" src="" alt="Código QR do cartão digital" class="w-36 h-36 border p-2 bg-white rounded-lg">
+            <span class="text-[9px] text-brand-textMuted tracking-widest uppercase font-semibold mt-1">Aponte a câmera para acessar</span>
+          </div>
+        </div>
+
+        <!-- Enviar via Whats Direct -->
+        <div>
+          <button onclick="toggleWhatsDirect()" class="w-full flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-brand-mutedBlue flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                <i class="fa-solid fa-comment-sms text-base"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-textDark">Enviar via Whats Direct</span>
+            </div>
+            <i id="directArrow" class="fa-solid fa-chevron-right text-[10px] text-brand-blue transition-transform duration-300"></i>
+          </button>
+          <div id="whatsDirectContainer" class="hidden mt-2 p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl space-y-2">
+            <p class="text-[10px] text-brand-textMuted leading-normal">Insira o número de destino com DDD (ex: 64981122821):</p>
+            <div class="flex gap-2">
+              <input type="tel" id="directPhoneInput" placeholder="DDD + Número" class="flex-1 px-3 py-2 bg-white border border-brand-mutedBlue rounded-lg text-xs text-brand-textDark focus:ring-1 focus:ring-brand-blue focus:outline-none">
+              <button onclick="sendWhatsDirect()" class="bg-brand-blue hover:bg-brand-blueHover text-white px-3 py-2 rounded-lg text-xs font-bold transition-all">Enviar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Compartilhar -->
+        <a id="shareWaLink" href="#" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-textDark">Compartilhar no WhatsApp</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- Telegram Compartilhar -->
+        <a id="shareTgLink" href="#" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-sky-100 flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+              <i class="fa-solid fa-paper-plane text-sm"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-textDark">Compartilhar no Telegram</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- Facebook Compartilhar -->
+        <a id="shareFbLink" href="#" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <i class="fa-brands fa-facebook-f text-sm"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-textDark">Compartilhar no Facebook</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- Copiar Link -->
+        <div class="pt-4 border-t border-brand-mutedBlue">
+          <div class="flex items-center justify-between p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl">
+            <span id="shareUrlDisplay" class="text-[10px] text-brand-textMuted truncate select-all max-w-[200px]"></span>
+            <button onclick="copyProfileLink()" id="copyProfileBtn" class="text-xs font-bold text-brand-blue hover:text-brand-blueHover transition-colors font-bold">Copiar Link</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL DE TRANSIÇÃO (INTERSTITIAL DO WHATSAPP) -->
+  <div id="waInterstitialModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-bg/95 opacity-0 pointer-events-none transition-opacity duration-500">
+    <div class="text-center max-w-xs flex flex-col items-center space-y-6">
+      
+      <!-- Halo Pulsante de Atendimento -->
+      <div class="w-16 h-16 rounded-full bg-brand-mutedBlue border border-brand-blue flex items-center justify-center text-brand-blue shadow-md relative">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-brand-blue/20 opacity-25 animate-ping" aria-hidden="true"></span>
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+      </div>
+
+      <div class="space-y-2">
+        <span class="text-[9px] uppercase tracking-[0.25em] text-brand-blue font-bold">Conectando ao Técnico</span>
+        <h4 class="font-display text-md text-brand-textDark font-bold">Direcionando ao WhatsApp</h4>
+        <p class="text-xs text-brand-textMuted">Por favor, aguarde enquanto conectamos você ao Ivan na Radar Celulares.</p>
+      </div>
+
+      <!-- Barra de Progresso de Carregamento -->
+      <div class="w-36 h-[3px] bg-brand-mutedBlue rounded-full overflow-hidden relative">
+        <div class="absolute inset-y-0 left-0 bg-brand-orange w-full transform origin-left scale-x-0 transition-transform duration-1200 ease-out" id="waProgressBar"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SCRIPTS JAVASCRIPT -->
+  <script>
+    // URL estática para compartilhamento baseada no navegador
+    const siteUrl = window.location.href;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const splashScreen = document.getElementById('splashScreen');
+      const splashLogo = document.getElementById('splashLogo');
+      const splashText = document.getElementById('splashText');
+      const mainContent = document.getElementById('mainContent');
+
+      // Configuração dinâmica de QR Code e Exibições no Modal de Compartilhar
+      document.getElementById('shareQrImage').src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(siteUrl)}`;
+      document.getElementById('shareUrlDisplay').textContent = siteUrl.replace(/^https?:\/\//, '');
+
+      // Configuração de compartilhamentos sociais
+      const shareMsg = `📱 *Radar Celulares | Assistência e Vendas*\n\nSeu celular em ótimas mãos! Conheça nossos serviços e peça seu orçamento.\n\n🔗 Acesse nosso site oficial: ${siteUrl}`;
+      const encodedMsg = encodeURIComponent(shareMsg);
+      const encodedUrl = encodeURIComponent(siteUrl);
+
+      document.getElementById('shareWaLink').href = `https://api.whatsapp.com/send?text=${encodedMsg}`;
+      document.getElementById('shareTgLink').href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedMsg}`;
+      document.getElementById('shareFbLink').href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+
+      // Gerador da animação de contagem de 0 a 100% no Splash Screen
+      const counter = document.getElementById('splashCounter');
+      const progressBar = document.getElementById('splashProgressBar');
+      let count = 0;
+      const totalDuration = 1400; // Tempo do splash
+      const stepTime = totalDuration / 100;
+      
+      const interval = setInterval(() => {
+        count++;
+        if (counter) counter.textContent = `${count}%`;
+        if (progressBar) progressBar.style.width = `${count}%`;
+        if (count >= 100) {
+          clearInterval(interval);
+        }
+      }, stepTime);
+
+      // Timings da Tela de Splash
+      setTimeout(() => {
+        splashText.classList.remove('opacity-0', 'translate-y-4');
+      }, 300);
+
+      setTimeout(() => {
+        splashLogo.classList.add('scale-90', 'opacity-0');
+        splashText.classList.add('opacity-0', '-translate-y-2');
+        splashScreen.classList.add('opacity-0', 'pointer-events-none');
+        
+        mainContent.classList.remove('opacity-0');
+        document.body.classList.remove('overflow-hidden');
+
+        // Inicializar Scroll Reveal
+        initScrollReveal();
+      }, 1600);
+    });
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // INTERACTION OBSERVER (SCROLL REVEAL NATIVO)
+    function initScrollReveal() {
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach((el) => observer.observe(el));
+    }
+
+    // CONTROLE DO SINALIZADOR VISUAL DE SCROLL (FADE OUT AO ROLAR)
+    window.addEventListener('scroll', () => {
+      const scrollIndicator = document.getElementById('scrollIndicator');
+      if (scrollIndicator) {
+        if (window.scrollY > 50) {
+          scrollIndicator.classList.add('opacity-0', 'pointer-events-none');
+        } else {
+          scrollIndicator.classList.remove('opacity-0', 'pointer-events-none');
+        }
+      }
+    });
+
+    // REDIRECIONAMENTOS DE WHATSAPP
+    const basePhone = "5564981122821";
+
+    function openWhatsAppBudget(servicoName) {
+      let msg = "";
+      if (servicoName === "Conserto") {
+        msg = "Olá, Ivan! Gostaria de fazer um orçamento de conserto para o meu celular.";
+      } else if (servicoName === "Atendimento Geral" || servicoName === "Suporte Rápido") {
+        msg = "Olá, Radar Celulares! Gostaria de tirar algumas dúvidas sobre aparelhos e serviços.";
+      } else {
+        msg = `Olá! Vi o seu site e gostaria de solicitar informações e valores sobre: ${servicoName}.`;
+      }
+      triggerWhatsAppRedirect(msg);
+    }
+
+    function triggerWhatsAppRedirect(messageText) {
+      const modal = document.getElementById('waInterstitialModal');
+      const bar = document.getElementById('waProgressBar');
+      const waLink = `https://wa.me/${basePhone}?text=${encodeURIComponent(messageText)}`;
+
+      modal.classList.remove('pointer-events-none', 'opacity-0');
+      bar.classList.remove('scale-x-0');
+      bar.classList.add('scale-x-100');
+
+      setTimeout(() => {
+        window.open(waLink, '_blank', 'noopener,noreferrer');
+        setTimeout(() => {
+          modal.classList.add('pointer-events-none', 'opacity-0');
+          bar.classList.remove('scale-x-100');
+          bar.classList.add('scale-x-0');
+        }, 1000);
+      }, 1400);
+    }
+
+    // LINK DE AVALIAÇÃO DO GOOGLE
+    function openGoogleReview() {
+      // Como não há link definitivo explícito nas capturas, direcionamos ao link de pesquisa de satisfação correspondente à localização
+      window.open("https://g.page/r/radarcelulares/review", '_blank', 'noopener,noreferrer');
+    }
+
+    // EXPORTAÇÃO DINÂMICA DE CONTATO (vCard)
+    function downloadVCard() {
+      const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Ivan José Vieira - Radar Celulares
+ORG:Radar Celulares
+TITLE:Especialista em Assistência Técnica de Celulares e Tablets
+TEL;TYPE=WORK,VOICE,CELL,pref:+5564981122821
+EMAIL;TYPE=PREF,INTERNET:radarcelularesslmb@gmail.com
+ADR;TYPE=WORK,POSTAL,pref:;;Av. Hermogenes Coelho, 2056, Centro;São Luís de Montes Belos;GO;76050-375;Brazil
+URL;TYPE=Site:${siteUrl}
+URL;TYPE=Instagram:https://www.instagram.com/radarcelulares/
+NOTE:📱 Radar Celulares\\n\\n💬 Atendimento Oficial: https://wa.me/5564981122821\\n📍 Localização: São Luís de Montes Belos - GO\\n\\nHá 25 anos no mercado, pioneiros e especialistas em manutenção, venda de novos, seminovos e acessórios.
+END:VCARD`;
+
+      const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const tempLink = document.createElement('a');
+      tempLink.download = 'Radar_Celulares_Ivan.vcf';
+      tempLink.href = url;
+      tempLink.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // CONTROLE COMPARTILHAR MODAL
+    const openShareBtn = document.getElementById('openShareBtn');
+    const shareModal = document.getElementById('shareModal');
+
+    function openShareModal() {
+      shareModal.classList.remove('pointer-events-none', 'opacity-0');
+      shareModal.firstElementChild.classList.remove('scale-95');
+    }
+
+    function closeShareModal() {
+      shareModal.classList.add('pointer-events-none', 'opacity-0');
+      shareModal.firstElementChild.classList.add('scale-95');
+      document.getElementById('shareQrContainer').classList.add('hidden');
+      document.getElementById('qrArrow').classList.remove('rotate-90');
+      document.getElementById('whatsDirectContainer').classList.add('hidden');
+      document.getElementById('directArrow').classList.remove('rotate-90');
+      document.getElementById('directPhoneInput').value = '';
+    }
+
+    if (openShareBtn) {
+      openShareBtn.addEventListener('click', openShareModal);
+    }
+
+    function toggleShareQrCode() {
+      const container = document.getElementById('shareQrContainer');
+      const arrow = document.getElementById('qrArrow');
+      container.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-90');
+    }
+
+    function toggleWhatsDirect() {
+      const container = document.getElementById('whatsDirectContainer');
+      const arrow = document.getElementById('directArrow');
+      container.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-90');
+    }
+
+    function sendWhatsDirect() {
+      const rawPhone = document.getElementById('directPhoneInput').value.trim();
+      const messageText = `📱 *Radar Celulares | Assistência e Acessórios*\n\nConserte seu aparelho com segurança e garantia!\n\n🔗 Acesse nosso site oficial: ${siteUrl}`;
+      const encodedMsg = encodeURIComponent(messageText);
+
+      if (!rawPhone) {
+        window.open(`https://api.whatsapp.com/send?text=${encodedMsg}`, '_blank', 'noopener,noreferrer');
+      } else {
+        let cleaned = rawPhone.replace(/\D/g, '');
+        if (cleaned.length === 11 || cleaned.length === 10) {
+          if (!cleaned.startsWith('55')) {
+            cleaned = '55' + cleaned;
+          }
+        }
+        window.open(`https://api.whatsapp.com/send?phone=${cleaned}&text=${encodedMsg}`, '_blank', 'noopener,noreferrer');
+      }
+    }
+
+    function copyProfileLink() {
+      navigator.clipboard.writeText(siteUrl).then(() => {
+        const btn = document.getElementById('copyProfileBtn');
+        const originalText = btn.textContent;
+        btn.textContent = "Link Copiado!";
+        btn.classList.add('text-emerald-600');
+        
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.classList.remove('text-emerald-600');
+        }, 2000);
+      }).catch(err => {
+        console.error('Falha ao copiar link:', err);
+      });
+    }
+
+    // CONTROLE DO PIX INTERATIVO
+    const pixModal = document.getElementById('pixModal');
+    const generatedPixSection = document.getElementById('generatedPixSection');
+    const pixCodeDisplay = document.getElementById('pixCodeDisplay');
+    const pixQrImage = document.getElementById('pixQrImage');
+
+    function openPixModal() {
+      pixModal.classList.remove('pointer-events-none', 'opacity-0');
+      pixModal.firstElementChild.classList.remove('scale-95');
+    }
+
+    function closePixModal() {
+      pixModal.classList.add('pointer-events-none', 'opacity-0');
+      pixModal.firstElementChild.classList.add('scale-95');
+      document.getElementById('pixAmount').value = '';
+      generatedPixSection.classList.add('hidden');
+    }
+
+    function copyPhoneKeyOnly() {
+      const phoneKey = "64981122821";
+      navigator.clipboard.writeText(phoneKey).then(() => {
+        const btn = document.getElementById('copyPhonePixBtn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Número Copiado!';
+        btn.classList.remove('bg-brand-orange');
+        btn.classList.add('bg-emerald-600');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('bg-emerald-600');
+          btn.classList.add('bg-brand-orange');
+        }, 2000);
+      });
+    }
+
+    // ALGORITMO DE CÁLCULO CRC-16 CCITT PARA COPIA E COLA REAL
+    function calculateCRC16(str) {
+      let crc = 0xFFFF;
+      for (let c = 0; c < str.length; c++) {
+        let code = str.charCodeAt(c);
+        crc ^= (code << 8);
+        for (let i = 0; i < 8; i++) {
+          if (crc & 0x8000) {
+            crc = (crc << 1) ^ 0x1021;
+          } else {
+            crc = crc << 1;
+          }
+          crc &= 0xFFFF;
+        }
+      }
+      return crc.toString(16).toUpperCase().padStart(4, '0');
+    }
+
+    // GERADOR DE CÓDIGO PIX DINÂMICO
+    function generateFunctionalPix() {
+      const amountInput = document.getElementById('pixAmount').value;
+      const amount = parseFloat(amountInput) || 0.00;
+      
+      let formattedAmount = '';
+      if (amount > 0) {
+        const amtStr = amount.toFixed(2);
+        const len = String(amtStr).length.toString().padStart(2, '0');
+        formattedAmount = `54${len}${amtStr}`;
+      }
+
+      // Chave PIX: Telefone 64981122821 (Formato nacional para chave celular no PIX: +5564981122821)
+      const phonePixKey = "+5564981122821";
+      const basePayload = `00020101021226410014br.gov.bcb.pix0115${phonePixKey}520400005303986`;
+      
+      const formattedName = "15IVAN JOSE VIEIRA"; // Adaptado para tamanho máximo permitido e sem acentos
+      const formattedCity = "25SAO LUIS DE MONTES BELOS";
+      const additionalField = "62070503***"; 
+      const crcHeader = "6304"; 
+
+      const stringToCalculate = `${basePayload}${formattedAmount}${formattedName}${formattedCity}${additionalField}${crcHeader}`;
+      const calculatedChecksum = calculateCRC16(stringToCalculate);
+      
+      const finalPixCode = `${stringToCalculate}${calculatedChecksum}`;
+      
+      pixCodeDisplay.value = finalPixCode;
+      pixQrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(finalPixCode)}`;
+      generatedPixSection.classList.remove('hidden');
+    }
+
+    function copyGeneratedPixCode() {
+      pixCodeDisplay.select();
+      pixCodeDisplay.setSelectionRange(0, 9999);
+      navigator.clipboard.writeText(pixCodeDisplay.value).then(() => {
+        alert("Código PIX Copia e Cola copiado com sucesso! Agora basta colar no seu aplicativo de banco para concluir o pagamento.");
+      });
+    }
+  </script>
+</body>
+</html>
