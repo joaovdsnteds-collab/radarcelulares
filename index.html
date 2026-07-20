@@ -107,13 +107,6 @@
       box-shadow: 0 12px 24px -8px rgba(39, 20, 111, 0.08);
       border-color: rgba(242, 82, 7, 0.3);
     }
-    
-    /* Simulação de Código de Barras */
-    .barcode-line {
-      display: inline-block;
-      height: 35px;
-      background-color: #120E2B;
-    }
   </style>
 </head>
 <body class="bg-brand-bg text-brand-textDark font-sans selection:bg-brand-orange/20 selection:text-brand-textDark antialiased overflow-hidden">
@@ -177,7 +170,7 @@
     <section class="max-w-5xl mx-auto px-4 py-12 md:py-16">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         
-        <!-- Texto Hero -->
+        <!-- Texto Hero (Esquerda) -->
         <div class="flex-1 space-y-6 text-center md:text-left">
           <div class="inline-flex items-center gap-2 bg-brand-lightOrange text-brand-orange border border-brand-orange/20 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-display">
             <i class="fa-solid fa-circle-check"></i> 25 Anos de Tradição e Pioneirismo
@@ -201,7 +194,7 @@
           </div>
         </div>
 
-        <!-- Foto Técnica Limpa -->
+        <!-- Foto Técnica Limpa (Direita) -->
         <div class="w-full max-w-sm md:max-w-xs flex justify-center">
           <div class="bg-brand-card p-3 rounded-3xl shadow-lg border border-brand-mutedBlue/50 w-full">
             <div class="rounded-2xl overflow-hidden bg-brand-bg relative">
@@ -264,72 +257,104 @@
       </div>
     </section>
 
-    <!-- ASSISTENTE DE DIAGNÓSTICO INTELIGENTE COM VOUCHER -->
+    <!-- INOVAÇÃO: ASSISTENTE DE DIAGNÓSTICO COM HOTSPOTS TÁTEIS (CONCEITO VISUAL UNIQUE) -->
     <section id="diagnostico" class="max-w-4xl mx-auto px-4 py-8 reveal">
       <div class="bg-brand-card rounded-3xl border border-brand-orange/25 p-6 md:p-8 shadow-md relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-4 font-mono text-[9px] text-brand-orange/40 font-bold hidden sm:block">[ REPARO INTERATIVO ]</div>
+        <div class="absolute top-0 right-0 p-4 font-mono text-[9px] text-brand-orange/40 font-bold hidden sm:block">[ LABORATÓRIO_DIAGNÓSTICO ]</div>
         
         <div class="text-center md:text-left mb-6">
-          <span class="text-xs uppercase tracking-wider text-brand-orange font-bold font-display block">Tecnologia Inteligente</span>
-          <h2 class="text-xl md:text-2xl font-display font-bold text-brand-textDark mt-1">Diagnóstico Rápido Online</h2>
-          <p class="text-xs text-brand-textMuted mt-1">Selecione o seu aparelho e o sintoma para obter uma estimativa de reparo em tempo real.</p>
+          <span class="text-xs uppercase tracking-wider text-brand-orange font-bold font-display block">Interativo e Tátil</span>
+          <h2 class="text-xl md:text-2xl font-display font-bold text-brand-textDark mt-1">Diagnóstico por Toque de Hardware</h2>
+          <p class="text-xs text-brand-textMuted mt-1">Toque diretamente no componente com defeito no celular interativo abaixo para avaliar.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          <div class="space-y-4">
-            <div>
-              <label class="block text-[11px] font-bold text-brand-textDark mb-1.5 uppercase tracking-wider font-display">1. Marca do Dispositivo</label>
-              <div class="grid grid-cols-3 gap-2" id="brandSelector">
-                <button data-brand="Apple" class="py-2.5 px-2 text-xs bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl font-bold font-display transition-all">Apple</button>
-                <button data-brand="Samsung" class="py-2.5 px-2 text-xs bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl font-bold font-display transition-all">Samsung</button>
-                <button data-brand="Motorola" class="py-2.5 px-2 text-xs bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl font-bold font-display transition-all">Motorola</button>
-                <button data-brand="Xiaomi" class="py-2.5 px-2 text-xs bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl font-bold font-display transition-all">Xiaomi</button>
-                <button data-brand="Tablet" class="py-2.5 px-2 text-xs bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl font-bold font-display transition-all">Tablet</button>
-                <button data-brand="Outro" class="py-2.5 px-2 text-xs bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl font-bold font-display transition-all">Outro</button>
-              </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          
+          <!-- LADO ESQUERDO: SMARTPHONE INTERATIVO (BLUEPRINT) -->
+          <div class="flex flex-col items-center space-y-4">
+            <!-- Seletor de Tipo de Aparelho -->
+            <div class="flex bg-brand-bg p-1 rounded-xl border border-brand-mutedBlue w-full max-w-[200px]">
+              <button id="btnDeviceiOS" class="flex-1 py-1.5 text-[10px] font-bold uppercase rounded-lg bg-brand-blue text-white transition-all font-display">iOS</button>
+              <button id="btnDeviceAndroid" class="flex-1 py-1.5 text-[10px] font-bold uppercase rounded-lg text-brand-textMuted hover:bg-brand-mutedBlue transition-all font-display">Android</button>
             </div>
 
-            <div>
-              <label class="block text-[11px] font-bold text-brand-textDark mb-1.5 uppercase tracking-wider font-display">2. Principal Sintoma</label>
-              <select id="symptomSelect" class="w-full p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl text-xs text-brand-textDark focus:outline-none focus:ring-1 focus:ring-brand-orange">
-                <option value="">Selecione o problema...</option>
-                <option value="tela">Tela Quebrada / Sem Toque</option>
-                <option value="bateria">Bateria descarrega rápido / Não carrega</option>
-                <option value="agua">Caiu na água / Aparelho Molhado</option>
-                <option value="botao">Botões quebrados ou travados</option>
-                <option value="sistema">Sistema travado / Não liga</option>
-                <option value="outro">Outro problema físico interno</option>
-              </select>
+            <!-- Silhueta Esquemática de Telefone -->
+            <div class="w-[190px] h-[330px] rounded-[38px] border-4 border-brand-blue/20 bg-brand-bg relative shadow-inner overflow-hidden flex items-center justify-center p-2">
+              
+              <!-- Placa Mãe Fictícia de fundo (Aspecto Blueprint) -->
+              <div class="absolute inset-4 border border-brand-blue/5 rounded-2xl flex items-center justify-center pointer-events-none">
+                <div class="w-[80%] h-[90%] border-r border-brand-blue/5 border-dashed flex flex-col justify-around py-4">
+                  <div class="border-t border-brand-blue/5 w-full"></div>
+                  <div class="border-t border-brand-blue/5 w-full"></div>
+                  <div class="border-t border-brand-blue/5 w-full"></div>
+                </div>
+              </div>
+
+              <!-- Notch Superior -->
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-4 bg-brand-bg border-b border-brand-blue/15 rounded-b-xl z-20"></div>
+
+              <!-- Hotspot 1: Tela (Top/Center) -->
+              <button class="tech-hotspot absolute top-[28%] left-1/2 -translate-x-1/2 flex flex-col items-center group z-30" data-symptom="tela">
+                <span class="hotspot-ring absolute w-7 h-7 bg-brand-orange/20 rounded-full animate-ping"></span>
+                <span class="hotspot-pin w-3.5 h-3.5 bg-brand-blue rounded-full border-2 border-white shadow-md transition-colors duration-300"></span>
+                <span class="mt-1 bg-brand-textDark/80 text-white font-mono text-[8px] px-1.5 py-0.5 rounded opacity-75 group-hover:opacity-100 transition-opacity whitespace-nowrap">TELA / TOUCH</span>
+              </button>
+
+              <!-- Hotspot 2: Bateria (Middle) -->
+              <button class="tech-hotspot absolute top-[52%] left-1/2 -translate-x-1/2 flex flex-col items-center group z-30" data-symptom="bateria">
+                <span class="hotspot-ring absolute w-7 h-7 bg-brand-orange/20 rounded-full animate-ping"></span>
+                <span class="hotspot-pin w-3.5 h-3.5 bg-brand-blue rounded-full border-2 border-white shadow-md transition-colors duration-300"></span>
+                <span class="mt-1 bg-brand-textDark/80 text-white font-mono text-[8px] px-1.5 py-0.5 rounded opacity-75 group-hover:opacity-100 transition-opacity whitespace-nowrap">BATERIA</span>
+              </button>
+
+              <!-- Hotspot 3: Botões (Lateral) -->
+              <button class="tech-hotspot absolute top-[40%] -right-1 flex flex-col items-center group z-30" data-symptom="botao">
+                <span class="hotspot-ring absolute w-7 h-7 bg-brand-orange/20 rounded-full animate-ping"></span>
+                <span class="hotspot-pin w-3.5 h-3.5 bg-brand-blue rounded-full border-2 border-white shadow-md transition-colors duration-300"></span>
+                <span class="mt-1 bg-brand-textDark/80 text-white font-mono text-[8px] px-1.5 py-0.5 rounded opacity-75 group-hover:opacity-100 transition-opacity whitespace-nowrap -translate-x-4">BOTÕES</span>
+              </button>
+
+              <!-- Hotspot 4: Conector / Placa (Bottom) -->
+              <button class="tech-hotspot absolute bottom-[10%] left-1/2 -translate-x-1/2 flex flex-col items-center group z-30" data-symptom="outro">
+                <span class="hotspot-ring absolute w-7 h-7 bg-brand-orange/20 rounded-full animate-ping"></span>
+                <span class="hotspot-pin w-3.5 h-3.5 bg-brand-blue rounded-full border-2 border-white shadow-md transition-colors duration-300"></span>
+                <span class="mt-1 bg-brand-textDark/80 text-white font-mono text-[8px] px-1.5 py-0.5 rounded opacity-75 group-hover:opacity-100 transition-opacity whitespace-nowrap">PLACA / CONECTOR</span>
+              </button>
+
             </div>
           </div>
 
-          <!-- Diagnóstico Adaptável sem tempo estimado -->
-          <div class="bg-brand-bg border border-brand-mutedBlue p-5 rounded-2xl flex flex-col justify-between h-full min-h-[220px]">
-            <div id="diagnosticPlaceholder" class="text-center my-auto">
-              <i class="fa-solid fa-wand-magic-sparkles text-2xl text-brand-orange/40 mb-2"></i>
-              <p class="text-xs text-brand-textMuted font-medium">Selecione a marca e o sintoma para calcular o diagnóstico.</p>
+          <!-- LADO DIREITO: INFORMAÇÕES DE DIAGNÓSTICO -->
+          <div class="bg-brand-bg border border-brand-mutedBlue p-5 rounded-2xl flex flex-col justify-between h-full min-h-[260px]">
+            <!-- Mapeamento Invisível para Sincronia de Formulário -->
+            <select id="symptomSelect" class="hidden">
+              <option value="">Selecione o problema...</option>
+              <option value="tela">Tela Quebrada / Sem Toque</option>
+              <option value="bateria">Bateria descarrega rápido / Não carrega</option>
+              <option value="botao">Botões quebrados ou travados</option>
+              <option value="outro">Outro problema físico interno</option>
+            </select>
+
+            <div id="diagnosticPlaceholder" class="text-center my-auto py-6">
+              <i class="fa-solid fa-hand-pointer text-2xl text-brand-orange/40 mb-3 block animate-bounce"></i>
+              <p class="text-xs text-brand-textMuted font-medium px-4">Escolha o tipo de aparelho acima e clique em um dos pontos pulsantes da placa lógica para detalhar o defeito.</p>
             </div>
 
             <div id="diagnosticResult" class="hidden space-y-4">
               <div class="border-b border-brand-mutedBlue pb-3">
-                <span class="text-[9px] font-mono uppercase bg-brand-lightOrange text-brand-orange px-2 py-0.5 rounded-md font-bold">Diagnóstico Estimado</span>
+                <span class="text-[9px] font-mono uppercase bg-brand-lightOrange text-brand-orange px-2 py-0.5 rounded-md font-bold">Laudo de Pré-Avaliação</span>
                 <p id="diagTitle" class="text-xs font-bold text-brand-textDark mt-1.5"></p>
                 <p id="diagDesc" class="text-xs text-brand-textMuted mt-1 leading-relaxed"></p>
               </div>
               
               <div class="flex justify-between items-center text-xs">
-                <span class="text-brand-textMuted">Complexidade do Reparo:</span>
+                <span class="text-brand-textMuted">Complexidade Geral do Reparo:</span>
                 <span id="diagComplexity" class="font-bold text-brand-blue uppercase font-mono text-[10px]"></span>
               </div>
 
-              <div class="grid grid-cols-2 gap-2">
-                <button id="sendDiagBtn" class="py-2.5 px-3 bg-emerald-500 hover:bg-emerald-600 text-white font-display text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-1">
-                  <i class="fa-brands fa-whatsapp"></i> Chamar Ivan
-                </button>
-                <button id="generateVoucherBtn" class="py-2.5 px-3 bg-brand-blue hover:bg-brand-blueHover text-white font-display text-[10px] font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-1">
-                  <i class="fa-solid fa-ticket"></i> Criar Ficha
-                </button>
-              </div>
+              <button id="sendDiagBtn" class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-display text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i> Chamar o Técnico Ivan
+              </button>
             </div>
           </div>
         </div>
@@ -337,51 +362,13 @@
       </div>
     </section>
 
-    <!-- INOVAÇÃO: MODAL DE VOUCHER DIGITAL GERADO NA HORA -->
-    <div id="voucherModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
-      <div class="bg-brand-card w-full max-w-xs rounded-3xl overflow-hidden shadow-xl border border-brand-mutedBlue transform scale-95 transition-transform duration-300 p-6 relative">
-        <button id="closeVoucherBtn" class="absolute top-4 right-4 text-brand-textMuted hover:text-brand-orange transition-colors">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-        
-        <div class="border-2 border-dashed border-brand-mutedBlue rounded-2xl p-4 bg-white text-center space-y-4">
-          <div class="h-8">
-            <img src="radar.png" alt="Radar Celulares" class="h-full w-auto object-contain mx-auto">
-          </div>
-          
-          <div class="border-y border-brand-mutedBlue py-2 font-mono text-[9px] text-brand-textMuted text-left space-y-1">
-            <p><strong>FICHA:</strong> <span id="voucherID" class="text-brand-orange font-bold"></span></p>
-            <p><strong>DATA:</strong> <span id="voucherDate"></span></p>
-            <p><strong>APARELHO:</strong> <span id="voucherDevice" class="text-brand-textDark"></span></p>
-            <p><strong>SINTOMA:</strong> <span id="voucherSymptom" class="text-brand-textDark"></span></p>
-          </div>
-
-          <div class="space-y-1">
-            <!-- Simulação de Código de Barras Realista -->
-            <div class="flex items-center justify-center gap-[2px]">
-              <span class="barcode-line w-[3px]"></span><span class="barcode-line w-[1px]"></span>
-              <span class="barcode-line w-[2px]"></span><span class="barcode-line w-[4px]"></span>
-              <span class="barcode-line w-[1px]"></span><span class="barcode-line w-[3px]"></span>
-              <span class="barcode-line w-[2px]"></span><span class="barcode-line w-[1px]"></span>
-              <span class="barcode-line w-[4px]"></span><span class="barcode-line w-[2px]"></span>
-              <span class="barcode-line w-[3px]"></span><span class="barcode-line w-[1px]"></span>
-              <span class="barcode-line w-[2px]"></span><span class="barcode-line w-[4px]"></span>
-            </div>
-            <p class="text-[8px] font-mono text-brand-textMuted uppercase">Apresentar na entrada física</p>
-          </div>
-          
-          <p class="text-[10px] text-brand-textMuted leading-snug">Tire um print ou salve essa ficha de triagem prévia para agilizar sua entrada na assistência.</p>
-        </div>
-      </div>
-    </div>
-
     <!-- INOVAÇÃO: PROTOCOLO RADAR (TESTES DE QUALIDADE BANCADA) -->
     <section id="protocolo" class="max-w-5xl mx-auto px-4 py-8 reveal">
       <div class="bg-brand-card rounded-3xl border border-brand-mutedBlue p-6 md:p-8 shadow-sm">
         <div class="text-center max-w-xl mx-auto mb-8">
           <span class="text-xs uppercase tracking-wider text-brand-orange font-bold font-display block mb-1">// Controle de Rigor</span>
           <h2 class="text-2xl font-display font-bold text-brand-textDark">Protocolo de Testes Radar</h2>
-          <p class="text-xs text-brand-textMuted mt-1">Conheça o processo de 8 etapas que realizamos em todo celular antes de declará-lo pronto para retirada.</p>
+          <p class="text-xs text-brand-textMuted mt-1">Conheça o processo de 4 etapas essenciais de teste que executamos em cada dispositivo.</p>
         </div>
 
         <!-- Checklist Interativa -->
@@ -729,7 +716,8 @@
           <p class="font-medium">Radar Celulares | Assistência Especializada e Vendas</p>
           <p>Av. Hermógenes Coelho, nº 2056 - Centro - São Luís de Montes Belos - GO</p>
           <p>&copy; <span id="currentYear"></span> Radar Celulares. Todos os direitos reservados.</p>
-          <!-- CRÉDITO DESENVOLVEDOR JOÃO VITOR S N -->
+          
+          <!-- CRÉDITO DESENVOLVEDOR JOÃO VITOR S N (Link Correto) -->
           <p class="pt-2 text-[9px] tracking-wider text-brand-textMuted font-mono">
             Experiência Digital criada por <strong class="text-brand-orange">João Vitor S N</strong> • 
             <a href="https://jovidigital.vercel.app/" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-orange transition-colors font-bold">Crie seu site aqui</a>
@@ -864,7 +852,7 @@
         <div class="pt-4 border-t border-brand-mutedBlue">
           <div class="flex items-center justify-between p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl">
             <span id="shareUrlDisplay" class="text-[10px] text-brand-textMuted truncate select-all max-w-[200px] font-mono"></span>
-            <button onclick="copyProfileLink()" id="copyProfileBtn" class="text-xs font-bold text-brand-blue hover:text-brand-blueHover transition-colors font-mono">COPIAR</button>
+            <button onclick="copyProfileLink()" id="copyProfileBtn" class="text-xs font-bold text-brand-blue hover:text-brand-blueHover transition-colors font-mono font-bold">COPIAR</button>
           </div>
         </div>
       </div>
@@ -895,61 +883,6 @@
   <script>
     const siteUrl = window.location.href;
     const basePhone = "5564981122821";
-
-    // ESTADO GLOBAL DO DIAGNÓSTICO
-    let selectedBrand = "";
-    const symptomsDatabase = {
-      tela: {
-        title: "Troca de Módulo de Display",
-        desc: "Indicado para telas trincadas, pixels mortos ou com falhas de toque. Realizamos a substituição completa com garantia de calibração técnica.",
-        complexity: "Média"
-      },
-      bateria: {
-        title: "Substituição Homologada de Bateria",
-        desc: "Ideal para perda severa de autonomia ou estufamento físico. Instalamos baterias de alta densidade energética.",
-        complexity: "Baixa"
-      },
-      agua: {
-        title: "Desoxidação e Secagem Química de Placas",
-        desc: "Banho químico com ultrassom para remoção de resíduos minerais. Recomendamos desligar o aparelho imediatamente.",
-        complexity: "Alta"
-      },
-      botao: {
-        title: "Reparo/Troca de Botões ou Flex Conector",
-        desc: "Correção de travamentos nos botões de volume/energia e no slot de carga tipo-C ou Lightning.",
-        complexity: "Média"
-      },
-      sistema: {
-        title: "Recuperação de Firmware e Software",
-        desc: "Correção de erros de bootloader, loops de logotipo do fabricante ou restauração completa de dados de partição corrompida.",
-        complexity: "Média"
-      },
-      outro: {
-        title: "Análise Técnica Presencial",
-        desc: "Nossos técnicos analisarão a placa lógica, os barramentos de energia e as conexões de circuito para identificar a falha.",
-        complexity: "Variável"
-      }
-    };
-
-    // BASE DE DADOS DO PROTOCOLO RADAR (TESTES DE BANCADA)
-    const protocolDatabase = {
-      "1": {
-        title: "1. Corrente de Repouso da Placa",
-        desc: "Análise realizada com fonte de alimentação de precisão de 4 dígitos. Garante que o processador e os circuitos secundários não consumam energia em stand-by, eliminando falhas de descarga fantasma da bateria."
-      },
-      "2": {
-        title: "2. Calibração e Grade do Touch",
-        desc: "Mapeamento completo da tela substituída por meio de um software de diagnóstico de grade. Testamos cada quadrante para assegurar que não haja 'toques fantasmas' ou pontos cegos de digitação."
-      },
-      "3": {
-        title: "3. Teste do Sensor de Proximidade",
-        desc: "Verificação funcional do infravermelho de bloqueio de tela. Essencial para garantir que a tela apague corretamente ao encostar o aparelho no ouvido durante ligações ou ao escutar áudios no WhatsApp."
-      },
-      "4": {
-        title: "4. Amperagem de Carga e Conector",
-        desc: "Medição de entrada de energia via USB Doctor. Testamos o conector de carga sob tensões variadas para verificar se o protocolo de 'Carga Rápida' (Fast Charge) está ativo e se a placa-mãe aceita a corrente sem superaquecer."
-      }
-    };
 
     window.addEventListener('DOMContentLoaded', () => {
       const splashScreen = document.getElementById('splashScreen');
@@ -1001,34 +934,40 @@
 
       document.getElementById('shareWaLink').href = `https://api.whatsapp.com/send?text=${encodedMsg}`;
 
-      // VINCULAR EVENTOS DO ASSISTENTE DE DIAGNÓSTICO
-      const brandButtons = document.querySelectorAll('#brandSelector button');
-      brandButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const brand = btn.getAttribute('data-brand');
-          selectBrand(brand, btn);
+      // VINCULAR EVENTOS DA INOVAÇÃO DOS HOTSPOTS DO MODELO INTERATIVO
+      const techHotspots = document.querySelectorAll('.tech-hotspot');
+      techHotspots.forEach(hs => {
+        hs.addEventListener('click', () => {
+          const symptomValue = hs.getAttribute('data-symptom');
+          selectSymptomFromHotspot(symptomValue, hs);
         });
       });
 
-      const symptomSelect = document.getElementById('symptomSelect');
-      if (symptomSelect) {
-        symptomSelect.addEventListener('change', updateDiagnostic);
+      // TOGGLE DISPOSITIVO DO BLUEPRINT
+      const btnDeviceiOS = document.getElementById('btnDeviceiOS');
+      const btnDeviceAndroid = document.getElementById('btnDeviceAndroid');
+      if (btnDeviceiOS && btnDeviceAndroid) {
+        btnDeviceiOS.addEventListener('click', () => {
+          selectedBrand = "iOS";
+          btnDeviceiOS.className = "flex-1 py-1.5 text-[10px] font-bold uppercase rounded-lg bg-brand-blue text-white transition-all font-display";
+          btnDeviceAndroid.className = "flex-1 py-1.5 text-[10px] font-bold uppercase rounded-lg text-brand-textMuted hover:bg-brand-mutedBlue transition-all font-display";
+          updateDiagnostic();
+        });
+
+        btnDeviceAndroid.addEventListener('click', () => {
+          selectedBrand = "Android";
+          btnDeviceAndroid.className = "flex-1 py-1.5 text-[10px] font-bold uppercase rounded-lg bg-brand-blue text-white transition-all font-display";
+          btnDeviceiOS.className = "flex-1 py-1.5 text-[10px] font-bold uppercase rounded-lg text-brand-textMuted hover:bg-brand-mutedBlue transition-all font-display";
+          updateDiagnostic();
+        });
+        
+        // Default de inicialização
+        selectedBrand = "iOS";
       }
 
       const sendDiagBtn = document.getElementById('sendDiagBtn');
       if (sendDiagBtn) {
         sendDiagBtn.addEventListener('click', sendDiagnosticToWhatsApp);
-      }
-
-      // EVENTO DA INOVAÇÃO: VOUCHER DIGITAL DE ENTRADA
-      const generateVoucherBtn = document.getElementById('generateVoucherBtn');
-      if (generateVoucherBtn) {
-        generateVoucherBtn.addEventListener('click', openVoucherModal);
-      }
-
-      const closeVoucherBtn = document.getElementById('closeVoucherBtn');
-      if (closeVoucherBtn) {
-        closeVoucherBtn.addEventListener('click', closeVoucherModal);
       }
 
       // EVENTO DA INOVAÇÃO: PROTOCOLO DE TESTE INTERATIVO
@@ -1041,7 +980,7 @@
       });
     });
 
-    // MONITOR DE FUNCIONAMENTO REAL-TIME
+    // SISTEMA MONITOR DE FUNCIONAMENTO REAL-TIME
     function updateShopStatus() {
       const indicator = document.getElementById('statusIndicator');
       const text = document.getElementById('statusText');
@@ -1083,19 +1022,28 @@
     setInterval(updateShopStatus, 30000);
     setTimeout(updateShopStatus, 50);
 
-    // FUNÇÕES DO ASSISTENTE DE DIAGNÓSTICO
-    function selectBrand(brand, clickedBtn) {
-      selectedBrand = brand;
-      const buttons = document.querySelectorAll('#brandSelector button');
-      buttons.forEach(btn => {
-        btn.classList.remove('bg-brand-orange', 'text-white', 'border-brand-orange');
-        btn.classList.add('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
+    // INTEGRAÇÃO DOS HOTSPOTS NO ASSISTENTE
+    function selectSymptomFromHotspot(symptomValue, clickedHs) {
+      const select = document.getElementById('symptomSelect');
+      if (!select) return;
+
+      select.value = symptomValue;
+
+      // Retorno visual tátil (Muda o estilo do hotspot ativo)
+      const hotspots = document.querySelectorAll('.tech-hotspot');
+      hotspots.forEach(hs => {
+        const pin = hs.querySelector('.hotspot-pin');
+        const ring = hs.querySelector('.hotspot-ring');
+        if (hs === clickedHs) {
+          pin.classList.remove('bg-brand-blue');
+          pin.classList.add('bg-brand-orange');
+          if (ring) ring.classList.remove('opacity-25');
+        } else {
+          pin.classList.add('bg-brand-blue');
+          pin.classList.remove('bg-brand-orange');
+        }
       });
-      
-      if (clickedBtn) {
-        clickedBtn.classList.add('bg-brand-orange', 'text-white', 'border-brand-orange');
-        clickedBtn.classList.remove('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
-      }
+
       updateDiagnostic();
     }
 
@@ -1114,46 +1062,21 @@
       }
 
       if (placeholder) placeholder.classList.add('hidden');
-      if (resultBlock) resultBlock.classList.remove('hidden');
-
-      const data = symptomsDatabase[symptom];
-      document.getElementById('diagTitle').innerText = `${selectedBrand} - ${data.title}`;
-      document.getElementById('diagDesc').innerText = data.desc;
-      document.getElementById('diagComplexity').innerText = data.complexity;
+      if (resultBlock) {
+        resultBlock.classList.remove('hidden');
+        const data = symptomsDatabase[symptom];
+        document.getElementById('diagTitle').innerText = `${selectedBrand} - ${data.title}`;
+        document.getElementById('diagDesc').innerText = data.desc;
+        document.getElementById('diagComplexity').innerText = data.complexity;
+      }
     }
 
     function sendDiagnosticToWhatsApp() {
       const symptomSelect = document.getElementById('symptomSelect');
       if (!symptomSelect) return;
       const symptomLabel = symptomSelect.options[symptomSelect.selectedIndex].text;
-      const textMessage = `Olá, Ivan! Realizei o diagnóstico no seu site para meu aparelho *${selectedBrand}* com o sintoma *${symptomLabel}*. Gostaria de confirmar valores e agendar o reparo.`;
+      const textMessage = `Olá, Ivan! Realizei o diagnóstico interativo no seu site para meu aparelho *${selectedBrand}* com o sintoma *${symptomLabel}*. Gostaria de confirmar valores e agendar o reparo.`;
       triggerWhatsAppRedirect(textMessage);
-    }
-
-    // MODAL DE VOUCHER DIGITAL
-    function openVoucherModal() {
-      const modal = document.getElementById('voucherModal');
-      const symptomSelect = document.getElementById('symptomSelect');
-      if (!modal || !symptomSelect) return;
-
-      const symptomLabel = symptomSelect.options[symptomSelect.selectedIndex].text;
-      const randomID = "RD-" + Math.floor(1000 + Math.random() * 9000);
-      const today = new Date().toLocaleDateString('pt-BR');
-
-      document.getElementById('voucherID').innerText = randomID;
-      document.getElementById('voucherDate').innerText = today;
-      document.getElementById('voucherDevice').innerText = selectedBrand;
-      document.getElementById('voucherSymptom').innerText = symptomLabel;
-
-      modal.classList.remove('pointer-events-none', 'opacity-0');
-      modal.firstElementChild.classList.remove('scale-95');
-    }
-
-    function closeVoucherModal() {
-      const modal = document.getElementById('voucherModal');
-      if (!modal) return;
-      modal.classList.add('pointer-events-none', 'opacity-0');
-      modal.firstElementChild.classList.add('scale-95');
     }
 
     // INTERAÇÃO PROTOCOLO DE QUALIDADE
@@ -1181,7 +1104,7 @@
       }
     }
 
-    // CARROSSEL DE DEPOIMENTOS
+    // CARROSSEL DE DEPOIMENTOS (DRAG & AUTO-RECOVERY)
     function initInteractiveCarousel() {
       const carousel = document.getElementById('reviewsCarousel');
       if (!carousel) return;
@@ -1299,6 +1222,35 @@
       revealElements.forEach((el) => observer.observe(el));
     }
 
+    function openWhatsAppBudget(servicoName) {
+      let msg = "";
+      if (servicoName === "Atendimento Geral" || servicoName === "Suporte") {
+        msg = "Olá, Ivan! Gostaria de conversar sobre um serviço no meu dispositivo.";
+      } else {
+        msg = `Olá! Visitei seu site e gostaria de tirar dúvidas sobre o serviço de: ${servicoName}.`;
+      }
+      triggerWhatsAppRedirect(msg);
+    }
+
+    function triggerWhatsAppRedirect(messageText) {
+      const modal = document.getElementById('waInterstitialModal');
+      const bar = document.getElementById('waProgressBar');
+      const waLink = `https://wa.me/${basePhone}?text=${encodeURIComponent(messageText)}`;
+
+      modal.classList.remove('pointer-events-none', 'opacity-0');
+      bar.classList.remove('scale-x-0');
+      bar.classList.add('scale-x-100');
+
+      setTimeout(() => {
+        window.open(waLink, '_blank', 'noopener,noreferrer');
+        setTimeout(() => {
+          modal.classList.add('pointer-events-none', 'opacity-0');
+          bar.classList.remove('scale-x-100');
+          bar.classList.add('scale-x-0');
+        }, 1000);
+      }, 1400);
+    }
+
     function openGoogleReview() {
       window.open("https://g.page/r/CWL1GnNJG6B1EBM/review", '_blank', 'noopener,noreferrer');
     }
@@ -1327,7 +1279,7 @@ END:VCARD`;
       URL.revokeObjectURL(url);
     }
 
-    // COMPARTILHAR MODAL
+    // MODAIS COMPARTILHAR
     function openShareModal() {
       shareModal.classList.remove('pointer-events-none', 'opacity-0');
       shareModal.firstElementChild.classList.remove('scale-95');
