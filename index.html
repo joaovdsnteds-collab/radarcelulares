@@ -42,8 +42,8 @@
           },
           colors: {
             brand: {
-              bg: '#F4F6FA',            // Fundo Off-White azulado limpo (aspecto de laboratório limpo)
-              card: '#FFFFFF',          // Cards brancos de alto contraste
+              bg: '#F4F6FA',            // Fundo Off-White azulado premium (aspecto de laboratório limpo)
+              card: '#FFFFFF',          // Cards brancos puros
               blue: '#27146F',          // Azul Escuro Radar
               blueHover: '#1B0D52',     // Hover do azul escuro
               orange: '#F25207',        // Laranja Vivo Tech
@@ -123,6 +123,10 @@
       <div class="mt-2">
         <span id="splashCounter" class="text-[10px] font-mono font-bold text-brand-blue tracking-wider">0%</span>
       </div>
+      <!-- Elemento de Texto do Carregamento (Restaurado) -->
+      <div id="splashText" class="mt-2 opacity-0 translate-y-4 transition-all duration-1000 delay-300">
+        <span class="font-mono text-[9px] tracking-[0.3em] text-brand-blue font-bold uppercase">[ INICIANDO BANCADA... ]</span>
+      </div>
     </div>
   </div>
 
@@ -163,7 +167,7 @@
       </div>
     </div>
 
-    <!-- HERO SECTION - LIMPO, MODERNO E EXTREMAMENTE LEGÍVEL -->
+    <!-- HERO SECTION -->
     <section class="max-w-5xl mx-auto px-4 py-12 md:py-16">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         
@@ -207,7 +211,7 @@
       </div>
     </section>
 
-    <!-- FUNÇÃO INOVADORA: ASSISTENTE DE DIAGNÓSTICO INTELIGENTE -->
+    <!-- ASSISTENTE DE DIAGNÓSTICO INTELIGENTE -->
     <section id="diagnostico" class="max-w-4xl mx-auto px-4 py-8 reveal">
       <div class="bg-brand-card rounded-3xl border border-brand-orange/25 p-6 md:p-8 shadow-md relative overflow-hidden">
         <div class="absolute top-0 right-0 p-4 font-mono text-[9px] text-brand-orange/40 font-bold hidden sm:block">[ REPARO INTERATIVO ]</div>
@@ -218,9 +222,7 @@
           <p class="text-xs text-brand-textMuted mt-1">Selecione o seu aparelho e o sintoma para obter uma estimativa de reparo em tempo real.</p>
         </div>
 
-        <!-- Assistente Layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          <!-- Seleções -->
           <div class="space-y-4">
             <div>
               <label class="block text-[11px] font-bold text-brand-textDark mb-1.5 uppercase tracking-wider font-display">1. Marca do Dispositivo</label>
@@ -248,7 +250,6 @@
             </div>
           </div>
 
-          <!-- Resultados do Diagnóstico -->
           <div class="bg-brand-bg border border-brand-mutedBlue p-5 rounded-2xl flex flex-col justify-between h-full min-h-[220px]">
             <div id="diagnosticPlaceholder" class="text-center my-auto">
               <i class="fa-solid fa-wand-magic-sparkles text-2xl text-brand-orange/40 mb-2"></i>
@@ -275,7 +276,7 @@
       </div>
     </section>
 
-    <!-- PAINEL DE SERVIÇOS (CRISP E ALTAMENTE LEGÍVEL) -->
+    <!-- PAINEL DE SERVIÇOS -->
     <section id="servicos" class="max-w-5xl mx-auto px-4 py-8 reveal">
       <div class="text-center max-w-xl mx-auto mb-10">
         <span class="text-xs uppercase tracking-wider text-brand-orange font-bold font-display block mb-1">// Catálogo Geral</span>
@@ -454,7 +455,7 @@
       </div>
     </section>
 
-    <!-- CARROSSEL DE DEPOIMENTOS ARRASTÁVEL COM AUTO-RECOVERY -->
+    <!-- DEPOIMENTOS -->
     <section id="avaliacoes" class="py-16 bg-brand-card border-y border-brand-mutedBlue overflow-hidden relative reveal">
       <div class="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-brand-bg to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
       <div class="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-brand-bg to-transparent z-10 pointer-events-none" aria-hidden="true"></div>
@@ -472,7 +473,6 @@
       <div class="relative w-full">
         <div id="reviewsCarousel" class="flex gap-6 overflow-x-auto scrollbar-none cursor-grab active:cursor-grabbing select-none px-4 py-2" style="scroll-behavior: auto;">
           
-          <!-- Orceni Tertodacunha -->
           <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative select-none">
             <div>
               <div class="flex items-center gap-1 text-amber-500 mb-3.5">
@@ -493,7 +493,6 @@
             </div>
           </div>
 
-          <!-- Arthur SOUZA NETO -->
           <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative select-none">
             <div>
               <div class="flex items-center gap-1 text-amber-500 mb-3.5">
@@ -514,7 +513,6 @@
             </div>
           </div>
 
-          <!-- Jose De Jesus -->
           <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative select-none">
             <div>
               <div class="flex items-center gap-1 text-amber-500 mb-3.5">
@@ -535,7 +533,6 @@
             </div>
           </div>
 
-          <!-- Joana NOGUEIRA -->
           <div class="w-80 p-6 bg-brand-bg rounded-2xl border border-brand-mutedBlue flex flex-col justify-between flex-shrink-0 shadow-sm relative select-none">
             <div>
               <div class="flex items-center gap-1 text-amber-500 mb-3.5">
@@ -560,7 +557,7 @@
       </div>
     </section>
 
-    <!-- BANNER DE ENGAJAMENTO DO INSTAGRAM -->
+    <!-- INSTAGRAM -->
     <section class="max-w-5xl mx-auto px-4 pb-12 reveal">
       <div class="bg-brand-card p-6 md:p-8 rounded-[24px] border border-brand-mutedBlue shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div class="space-y-2">
@@ -725,7 +722,7 @@
         <div class="pt-4 border-t border-brand-mutedBlue">
           <div class="flex items-center justify-between p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl">
             <span id="shareUrlDisplay" class="text-[10px] text-brand-textMuted truncate select-all max-w-[200px] font-mono"></span>
-            <button onclick="copyProfileLink()" id="copyProfileBtn" class="text-xs font-bold text-brand-blue hover:text-brand-blueHover transition-colors font-mono">COPIAR</button>
+            <button onclick="copyProfileLink()" id="copyProfileBtn" class="text-xs font-bold text-brand-blue hover:text-brand-blueHover transition-colors font-mono font-bold">COPIAR</button>
           </div>
         </div>
       </div>
@@ -754,94 +751,72 @@
 
   <!-- SCRIPTS JAVASCRIPT -->
   <script>
-    // Configurações do Estado Global do Assistente
-    let selectedBrand = "";
-    const symptomsDatabase = {
-      tela: {
-        title: "Troca de Módulo de Display",
-        desc: "Indicado para telas trincadas, pixels mortos ou com falhas de toque. Realizamos a substituição completa com garantia de calibração.",
-        time: "30 a 60 minutos"
-      },
-      bateria: {
-        title: "Substituição Homologada de Bateria",
-        desc: "Ideal para perda severa de autonomia ou estufamento físico. Instalamos baterias de alta densidade energética.",
-        time: "15 a 45 minutos"
-      },
-      agua: {
-        title: "Desoxidação e Secagem Química de Placas",
-        desc: "Banho químico com ultrassom para remoção de resíduos minerais. Recomendamos desligar o aparelho imediatamente.",
-        time: "12 a 24 horas"
-      },
-      botao: {
-        title: "Reparo/Troca de Botões ou Flex Conector",
-        desc: "Correção de travamentos nos botões de volume/energia e no slot de carga tipo-C ou Lightning.",
-        time: "1 a 2 horas"
-      },
-      sistema: {
-        title: "Recuperação de Firmware e Software",
-        desc: "Correção de erros de bootloader, loops de logotipo do fabricante ou restauração completa de dados de partição corrompida.",
-        time: "1 a 3 horas"
-      },
-      outro: {
-        title: "Análise Técnica Presencial",
-        desc: "Nossos técnicos analisarão a placa lógica, os barramentos de energia e as conexões de circuito para identificar a falha.",
-        time: "Sob consulta"
-      }
-    };
+    const siteUrl = window.location.href;
+    const basePhone = "5564981122821";
 
-    function selectBrand(brand) {
-      selectedBrand = brand;
-      const buttons = document.querySelectorAll('#brandSelector button');
-      buttons.forEach(btn => {
-        if (btn.innerText === brand) {
-          btn.classList.add('bg-brand-orange', 'text-white', 'border-brand-orange');
-          btn.classList.remove('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
-        } else {
-          btn.classList.remove('bg-brand-orange', 'text-white', 'border-brand-orange');
-          btn.classList.add('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
+    window.addEventListener('DOMContentLoaded', () => {
+      const splashScreen = document.getElementById('splashScreen');
+      const splashLogo = document.getElementById('splashLogo');
+      const splashText = document.getElementById('splashText');
+      const mainContent = document.getElementById('mainContent');
+
+      // Proteção de travamento no carregador (Verificação se elementos existem)
+      const counter = document.getElementById('splashCounter');
+      const progressBar = document.getElementById('splashProgressBar');
+      let count = 0;
+      const totalDuration = 1400; 
+      const stepTime = totalDuration / 100;
+      
+      const interval = setInterval(() => {
+        count++;
+        if (counter) counter.textContent = `${count}%`;
+        if (progressBar) progressBar.style.width = `${count}%`;
+        if (count >= 100) {
+          clearInterval(interval);
         }
-      });
-      updateDiagnostic();
-    }
+      }, stepTime);
 
-    function updateDiagnostic() {
-      const symptom = document.getElementById('symptomSelect').value;
-      const placeholder = document.getElementById('diagnosticPlaceholder');
-      const resultBlock = document.getElementById('diagnosticResult');
-
-      if (!selectedBrand || !symptom) {
-        placeholder.classList.remove('hidden');
-        resultBlock.classList.add('hidden');
-        return;
+      if (splashText) {
+        setTimeout(() => {
+          splashText.classList.remove('opacity-0', 'translate-y-4');
+        }, 300);
       }
 
-      placeholder.classList.add('hidden');
-      resultBlock.classList.remove('hidden');
+      setTimeout(() => {
+        if (splashLogo) splashLogo.classList.add('scale-90', 'opacity-0');
+        if (splashText) splashText.classList.add('opacity-0', '-translate-y-2');
+        if (splashScreen) splashScreen.classList.add('opacity-0', 'pointer-events-none');
+        
+        if (mainContent) mainContent.classList.remove('opacity-0');
+        document.body.classList.remove('overflow-hidden');
 
-      const data = symptomsDatabase[symptom];
-      document.getElementById('diagTitle').innerText = `${selectedBrand} - ${data.title}`;
-      document.getElementById('diagDesc').innerText = data.desc;
-      document.getElementById('diagTime').innerText = data.time;
-    }
+        // Inicializações auxiliares
+        initScrollReveal();
+        initInteractiveCarousel();
+      }, 1600);
 
-    function sendDiagnosticToWhatsApp() {
-      const symptomSelect = document.getElementById('symptomSelect');
-      const symptomLabel = symptomSelect.options[symptomSelect.selectedIndex].text;
-      const textMessage = `Olá, Ivan! Realizei o diagnóstico no seu site para meu aparelho *${selectedBrand}* com o sintoma *${symptomLabel}*. Gostaria de confirmar valores e agendar o reparo.`;
-      triggerWhatsAppRedirect(textMessage);
-    }
+      // Definições de links de compartilhamento
+      document.getElementById('shareQrImage').src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(siteUrl)}`;
+      document.getElementById('shareUrlDisplay').textContent = siteUrl.replace(/^https?:\/\//, '');
 
-    // MONITORAMENTO DE FUNCIONAMENTO REAL-TIME
+      const shareMsg = `📱 *Radar Celulares | Assistência e Vendas*\n\nSeu celular em boas mãos! Conheça nosso catálogo de serviços e agende seu reparo.\n\n🔗 Acesse nosso site oficial: ${siteUrl}`;
+      const encodedMsg = encodeURIComponent(shareMsg);
+      const encodedUrl = encodeURIComponent(siteUrl);
+
+      document.getElementById('shareWaLink').href = `https://api.whatsapp.com/send?text=${encodedMsg}`;
+    });
+
+    // SISTEMA MONITOR DE FUNCIONAMENTO REAL-TIME
     function updateShopStatus() {
       const indicator = document.getElementById('statusIndicator');
       const text = document.getElementById('statusText');
+      if (!indicator || !text) return;
 
-      // Goiás está no Horário de Brasília (GMT-3).
       const now = new Date();
       const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-      const SlmbTime = new Date(utc + (3600000 * -3)); // fuso -3
+      const SlmbTime = new Date(utc + (3600000 * -3)); // Goiás GMT-3
 
-      const day = SlmbTime.getDay(); // 0: Dom, 1: Seg, 2: Ter...
+      const day = SlmbTime.getDay(); // 0: Dom, 1: Seg...
       const hour = SlmbTime.getHours();
       const minutes = SlmbTime.getMinutes();
       const totalMinutes = (hour * 60) + minutes;
@@ -870,17 +845,10 @@
       }
     }
 
-    setInterval(updateShopStatus, 30000); // Atualiza a cada 30 segundos
-    updateShopStatus(); // Execução imediata ao carregar
+    setInterval(updateShopStatus, 30000);
+    setTimeout(updateShopStatus, 50);
 
-
-    // CONFIGURAÇÃO GERAL DE COMPORTAMENTOS DA TELA
-    window.addEventListener('DOMContentLoaded', () => {
-      // Reposiciona o carrossel na montagem
-      initInteractiveCarousel();
-    });
-
-    // CARROSSEL DE FEEDBACK COM DRAG & AUTO-RECOVERY
+    // CONTROLE DOS DEPOIMENTOS
     function initInteractiveCarousel() {
       const carousel = document.getElementById('reviewsCarousel');
       if (!carousel) return;
@@ -981,11 +949,7 @@
       startAutoScroll();
     }
 
-
-    // OUTRAS FUNÇÕES AUXILIARES PRESERVADAS
-    const currentYearSpan = document.getElementById('currentYear');
-    if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
-
+    // OUTROS COMPORTAMENTOS GERAIS
     function initScrollReveal() {
       const revealElements = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver((entries) => {
@@ -1007,7 +971,7 @@
       if (servicoName === "Atendimento Geral" || servicoName === "Suporte") {
         msg = "Olá, Ivan! Gostaria de conversar sobre um serviço no meu dispositivo.";
       } else {
-        msg = `Olá! Vi o seu site e gostaria de tirar dúvidas sobre o serviço de: ${servicoName}.`;
+        msg = `Olá! Visitei seu site e gostaria de tirar dúvidas sobre o serviço de: ${servicoName}.`;
       }
       triggerWhatsAppRedirect(msg);
     }
@@ -1059,10 +1023,7 @@ END:VCARD`;
       URL.revokeObjectURL(url);
     }
 
-    // CONTROLE MODAIS
-    const openShareBtn = document.getElementById('openShareBtn');
-    const shareModal = document.getElementById('shareModal');
-
+    // MODAIS COMPARTILHAR
     function openShareModal() {
       shareModal.classList.remove('pointer-events-none', 'opacity-0');
       shareModal.firstElementChild.classList.remove('scale-95');
@@ -1127,11 +1088,7 @@ END:VCARD`;
       });
     }
 
-    const pixModal = document.getElementById('pixModal');
-    const generatedPixSection = document.getElementById('generatedPixSection');
-    const pixCodeDisplay = document.getElementById('pixCodeDisplay');
-    const pixQrImage = document.getElementById('pixQrImage');
-
+    // MODAL PIX
     function openPixModal() {
       pixModal.classList.remove('pointer-events-none', 'opacity-0');
       pixModal.firstElementChild.classList.remove('scale-95');
@@ -1158,6 +1115,23 @@ END:VCARD`;
           btn.classList.add('bg-brand-orange');
         }, 2000);
       });
+    }
+
+    function calculateCRC16(str) {
+      let crc = 0xFFFF;
+      for (let c = 0; c < str.length; c++) {
+        let code = str.charCodeAt(c);
+        crc ^= (code << 8);
+        for (let i = 0; i < 8; i++) {
+          if (crc & 0x8000) {
+            crc = (crc << 1) ^ 0x1021;
+          } else {
+            crc = crc << 1;
+          }
+          crc &= 0xFFFF;
+        }
+      }
+      return crc.toString(16).toUpperCase().padStart(4, '0');
     }
 
     function copyGeneratedPixCode() {
