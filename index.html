@@ -167,7 +167,7 @@
       </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION - LIMPO, MODERNO E EXTREMAMENTE LEGÍVEL -->
     <section class="max-w-5xl mx-auto px-4 py-12 md:py-16">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         
@@ -211,7 +211,54 @@
       </div>
     </section>
 
-    <!-- ASSISTENTE DE DIAGNÓSTICO INTELIGENTE -->
+    <!-- PAINEL DE BOTÕES DE AÇÃO RÁPIDA (DINÂMICOS E OTIMIZADOS PARA CELULAR) -->
+    <section class="max-w-4xl mx-auto px-4 pb-6 reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        
+        <!-- Botão 1: Chave Pix -->
+        <button onclick="openPixModal()" 
+                class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+          <div class="w-10 h-10 rounded-full bg-brand-lightOrange text-brand-orange flex items-center justify-center mb-2 shadow-inner">
+            <i class="fa-brands fa-pix text-base"></i>
+          </div>
+          <span class="block text-[11px] font-bold text-brand-textDark uppercase tracking-wider font-display">Área PIX</span>
+          <span class="block text-[9px] text-brand-textMuted mt-0.5 font-medium leading-none">Copiar Chave Celular</span>
+        </button>
+
+        <!-- Botão 2: Localização -->
+        <a href="https://maps.app.goo.gl/Fi9HXP1NXDEc96ry7" target="_blank" rel="noopener noreferrer" 
+           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+          <div class="w-10 h-10 rounded-full bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-2 shadow-inner">
+            <i class="fa-solid fa-route text-sm"></i>
+          </div>
+          <span class="block text-[11px] font-bold text-brand-textDark uppercase tracking-wider font-display">Como Chegar</span>
+          <span class="block text-[9px] text-brand-textMuted mt-0.5 font-medium leading-none">Abrir Rota de GPS</span>
+        </a>
+
+        <!-- Botão 3: Avaliar -->
+        <button onclick="openGoogleReview()" 
+                class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+          <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mb-2 shadow-inner">
+            <i class="fa-solid fa-star text-xs"></i>
+          </div>
+          <span class="block text-[11px] font-bold text-brand-textDark uppercase tracking-wider font-display">Avaliar Loja</span>
+          <span class="block text-[9px] text-brand-textMuted mt-0.5 font-medium leading-none">Google Business</span>
+        </button>
+
+        <!-- Botão 4: Instagram -->
+        <a href="https://www.instagram.com/radarcelulares/" target="_blank" rel="noopener noreferrer" 
+           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+          <div class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mb-2 shadow-inner">
+            <i class="fa-brands fa-instagram text-base"></i>
+          </div>
+          <span class="block text-[11px] font-bold text-brand-textDark uppercase tracking-wider font-display">Instagram</span>
+          <span class="block text-[9px] text-brand-textMuted mt-0.5 font-medium leading-none">Siga @radarcelulares</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- FUNÇÃO INOVADORA: ASSISTENTE DE DIAGNÓSTICO INTELIGENTE -->
     <section id="diagnostico" class="max-w-4xl mx-auto px-4 py-8 reveal">
       <div class="bg-brand-card rounded-3xl border border-brand-orange/25 p-6 md:p-8 shadow-md relative overflow-hidden">
         <div class="absolute top-0 right-0 p-4 font-mono text-[9px] text-brand-orange/40 font-bold hidden sm:block">[ REPARO INTERATIVO ]</div>
@@ -847,6 +894,83 @@
 
     setInterval(updateShopStatus, 30000);
     setTimeout(updateShopStatus, 50);
+
+    // CONFIGURAÇÕES DO ESTADO GLOBAL DO ASSISTENTE DE DIAGNÓSTICO
+    let selectedBrand = "";
+    const symptomsDatabase = {
+      tela: {
+        title: "Troca de Módulo de Display",
+        desc: "Indicado para telas trincadas, pixels mortos ou com falhas de toque. Realizamos a substituição completa com garantia de calibração.",
+        time: "30 a 60 minutos"
+      },
+      bateria: {
+        title: "Substituição Homologada de Bateria",
+        desc: "Ideal para perda severa de autonomia ou estufamento físico. Instalamos baterias de alta densidade energética.",
+        time: "15 a 45 minutos"
+      },
+      agua: {
+        title: "Desoxidação e Secagem Química de Placas",
+        desc: "Banho químico com ultrassom para remoção de resíduos minerais. Recomendamos desligar o aparelho imediatamente.",
+        time: "12 a 24 horas"
+      },
+      botao: {
+        title: "Reparo/Troca de Botões ou Flex Conector",
+        desc: "Correção de travamentos nos botões de volume/energia e no slot de carga tipo-C ou Lightning.",
+        time: "1 a 2 horas"
+      },
+      sistema: {
+        title: "Recuperação de Firmware e Software",
+        desc: "Correção de erros de bootloader, loops de logotipo do fabricante ou restauração completa de dados de partição corrompida.",
+        time: "1 a 3 horas"
+      },
+      outro: {
+        title: "Análise Técnica Presencial",
+        desc: "Nossos técnicos analisarão a placa lógica, os barramentos de energia e as conexões de circuito para identificar a falha.",
+        time: "Sob consulta"
+      }
+    };
+
+    function selectBrand(brand) {
+      selectedBrand = brand;
+      const buttons = document.querySelectorAll('#brandSelector button');
+      buttons.forEach(btn => {
+        if (btn.innerText === brand) {
+          btn.classList.add('bg-brand-orange', 'text-white', 'border-brand-orange');
+          btn.classList.remove('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
+        } else {
+          btn.classList.remove('bg-brand-orange', 'text-white', 'border-brand-orange');
+          btn.classList.add('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
+        }
+      });
+      updateDiagnostic();
+    }
+
+    function updateDiagnostic() {
+      const symptom = document.getElementById('symptomSelect').value;
+      const placeholder = document.getElementById('diagnosticPlaceholder');
+      const resultBlock = document.getElementById('diagnosticResult');
+
+      if (!selectedBrand || !symptom) {
+        if (placeholder) placeholder.classList.remove('hidden');
+        if (resultBlock) resultBlock.classList.add('hidden');
+        return;
+      }
+
+      if (placeholder) placeholder.classList.add('hidden');
+      if (resultBlock) resultBlock.classList.remove('hidden');
+
+      const data = symptomsDatabase[symptom];
+      document.getElementById('diagTitle').innerText = `${selectedBrand} - ${data.title}`;
+      document.getElementById('diagDesc').innerText = data.desc;
+      document.getElementById('diagTime').innerText = data.time;
+    }
+
+    function sendDiagnosticToWhatsApp() {
+      const symptomSelect = document.getElementById('symptomSelect');
+      const symptomLabel = symptomSelect.options[symptomSelect.selectedIndex].text;
+      const textMessage = `Olá, Ivan! Realizei o diagnóstico no seu site para meu aparelho *${selectedBrand}* com o sintoma *${symptomLabel}*. Gostaria de confirmar valores e agendar o reparo.`;
+      triggerWhatsAppRedirect(textMessage);
+    }
 
     // CONTROLE DOS DEPOIMENTOS
     function initInteractiveCarousel() {
