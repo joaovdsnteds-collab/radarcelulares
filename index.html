@@ -14,8 +14,8 @@
   <meta property="og:description" content="Seu celular em boas mãos! Assistência de confiança, acessórios e venda de novos e seminovos em São Luís de Montes Belos.">
   <meta property="og:type" content="website">
   
-  <meta property="og:image" content="radar.png">
-  <meta property="og:image:secure_url" content="radar.png">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:image:secure_url" content="logo.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="300">
   <meta property="og:image:height" content="300">
@@ -46,10 +46,10 @@
               card: '#FFFFFF',          // Cards brancos puros
               blue: '#27146F',          // Azul Escuro Radar
               blueHover: '#1B0D52',     // Hover do azul escuro
-              orange: '#F25207',        // Laranja Vivo Tech
-              orangeHover: '#D34200',   // Hover do laranja
+              red: '#DC2626',           // Vermelho Institucional Radar (Nova Cor)
+              redHover: '#B91C1C',      // Hover vermelho
               mutedBlue: '#E7E6F5',     // Fundo azulado suave
-              lightOrange: '#FFF1EB',   // Fundo laranja suave para badges
+              lightRed: '#FEE2E2',      // Fundo vermelho suave para badges
               textDark: '#120E2B',      // Texto escuro com excelente contraste de leitura
               textMuted: '#514D66'      // Texto cinza-azulado para descrições secundárias
             }
@@ -105,20 +105,20 @@
     }
     .glow-brand-hover:hover {
       box-shadow: 0 12px 24px -8px rgba(39, 20, 111, 0.08);
-      border-color: rgba(242, 82, 7, 0.3);
+      border-color: rgba(220, 38, 38, 0.3);
     }
   </style>
 </head>
-<body class="bg-brand-bg text-brand-textDark font-sans selection:bg-brand-orange/20 selection:text-brand-textDark antialiased overflow-hidden">
+<body class="bg-brand-bg text-brand-textDark font-sans selection:bg-brand-red/20 selection:text-brand-textDark antialiased overflow-hidden">
 
   <!-- TELA DE APRESENTAÇÃO (SPLASH SCREEN) -->
   <div id="splashScreen" class="fixed inset-0 bg-brand-bg z-50 flex items-center justify-center transition-all duration-1000 ease-in-out">
     <div class="text-center flex flex-col items-center px-4 w-full max-w-xs">
       <div id="splashLogo" class="w-32 h-24 overflow-hidden transform scale-110 transition-all duration-1000 ease-out flex items-center justify-center">
-        <img src="radar.png" alt="Radar Celulares" class="w-full h-full object-contain">
+        <img src="logo.png" alt="Radar Celulares" class="w-full h-full object-contain">
       </div>
       <div class="w-32 h-[3px] bg-brand-mutedBlue rounded-full mt-6 overflow-hidden relative">
-        <div id="splashProgressBar" class="absolute inset-y-0 left-0 bg-brand-orange w-0 rounded-full transition-all duration-100 ease-out"></div>
+        <div id="splashProgressBar" class="absolute inset-y-0 left-0 bg-brand-red w-0 rounded-full transition-all duration-100 ease-out"></div>
       </div>
       <div class="mt-2">
         <span id="splashCounter" class="text-[10px] font-mono font-bold text-brand-blue tracking-wider">0%</span>
@@ -137,15 +137,15 @@
     <header class="sticky top-0 z-40 w-full glass-effect border-b border-brand-mutedBlue transition-all duration-300">
       <div class="max-w-5xl mx-auto px-4 h-20 flex items-center justify-between">
         <a href="#" class="flex items-center space-x-3 h-12">
-          <img src="radar.png" alt="Radar Celulares" class="h-10 w-auto object-contain">
+          <img src="logo.png" alt="Radar Celulares" class="h-10 w-auto object-contain">
         </a>
 
         <!-- Menu Desktop -->
         <div class="hidden md:flex items-center space-x-8 text-[11px] uppercase tracking-wider font-semibold text-brand-textMuted font-display">
-          <a href="#diagnostico" class="hover:text-brand-orange transition-colors">Orçamento</a>
-          <a href="#servicos" class="hover:text-brand-orange transition-colors">Serviços</a>
-          <a href="#sobre" class="hover:text-brand-orange transition-colors">Quem Somos</a>
-          <a href="#avaliacoes" class="hover:text-brand-orange transition-colors">Depoimentos</a>
+          <a href="#diagnostico" class="hover:text-brand-red transition-colors">Orçamento</a>
+          <a href="#servicos" class="hover:text-brand-red transition-colors">Serviços</a>
+          <a href="#sobre" class="hover:text-brand-red transition-colors">Quem Somos</a>
+          <a href="#avaliacoes" class="hover:text-brand-red transition-colors">Depoimentos</a>
         </div>
 
         <div class="flex items-center space-x-2">
@@ -163,22 +163,22 @@
     <div class="bg-brand-blue text-white text-xs py-2 px-4 transition-all duration-300">
       <div class="max-w-5xl mx-auto flex items-center justify-center gap-2 font-display font-medium text-center">
         <span id="statusIndicator" class="inline-block w-2.5 h-2.5 rounded-full animate-pulse bg-emerald-500"></span>
-        <span id="statusText">Verificando status de funcionamento...</span>
+        <span id="statusText">Verificando status de funcionamento da loja...</span>
       </div>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION - LIMPO, MODERNO E EXTREMAMENTE LEGÍVEL -->
     <section class="max-w-5xl mx-auto px-4 py-12 md:py-16">
       <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
         
         <!-- Texto Hero (Esquerda) -->
         <div class="flex-1 space-y-6 text-center md:text-left">
-          <div class="inline-flex items-center gap-2 bg-brand-lightOrange text-brand-orange border border-brand-orange/20 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-display">
+          <div class="inline-flex items-center gap-2 bg-brand-lightRed text-brand-red border border-brand-red/20 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-display">
             <i class="fa-solid fa-circle-check"></i> 25 Anos de Tradição e Pioneirismo
           </div>
           
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-brand-textDark leading-tight">
-            Seu dispositivo em <span class="text-brand-orange">mãos experientes</span>.
+            Seu dispositivo em <span class="text-brand-red">mãos experientes</span>.
           </h1>
           
           <p class="text-sm md:text-base text-brand-textMuted leading-relaxed max-w-lg mx-auto md:mx-0">
@@ -186,11 +186,12 @@
           </p>
 
           <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-            <a href="#diagnostico" class="px-6 py-3.5 bg-brand-orange hover:bg-brand-orangeHover text-white text-xs font-display font-bold uppercase tracking-wider rounded-xl transition-all shadow-md">
-              <i class="fa-solid fa-screwdriver-wrench mr-2"></i> Orçamento Instantâneo
-            </a>
-            <a href="#servicos" class="px-6 py-3.5 bg-brand-card hover:bg-brand-bg text-brand-blue border border-brand-mutedBlue text-xs font-display font-bold uppercase tracking-wider rounded-xl transition-all">
-              Conhecer Serviços
+            <!-- Botão do WhatsApp de Destaque na Área Principal -->
+            <button onclick="openWhatsAppBudget('Atendimento Hero')" class="px-6 py-3.5 bg-brand-red hover:bg-brand-redHover text-white text-xs font-display font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-2 active:scale-95">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Chamar no WhatsApp
+            </button>
+            <a href="#diagnostico" class="px-6 py-3.5 bg-brand-card hover:bg-brand-bg text-brand-blue border border-brand-mutedBlue text-xs font-display font-bold uppercase tracking-wider rounded-xl transition-all active:scale-95">
+              Orçamento Instantâneo
             </a>
           </div>
         </div>
@@ -202,7 +203,7 @@
               <img src="ivan.jpeg" alt="Ivan José Vieira" class="w-full h-auto object-cover object-center max-h-[360px]">
               <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-white text-center">
                 <p class="text-xs font-bold font-display">Ivan José Vieira</p>
-                <p class="text-[9px] text-brand-lightOrange/80 uppercase tracking-widest font-mono">Fundador & Técnico Responsável</p>
+                <p class="text-[9px] text-brand-lightRed/80 uppercase tracking-widest font-mono">Fundador & Técnico Responsável</p>
               </div>
             </div>
           </div>
@@ -217,8 +218,8 @@
         
         <!-- Botão 1: Chave Pix -->
         <button onclick="openPixModal()" 
-                class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
-          <div class="w-10 h-10 rounded-full bg-brand-lightOrange text-brand-orange flex items-center justify-center mb-2 shadow-inner">
+                class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-red/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+          <div class="w-10 h-10 rounded-full bg-brand-lightRed text-brand-red flex items-center justify-center mb-2 shadow-inner">
             <i class="fa-brands fa-pix text-base"></i>
           </div>
           <span class="block text-[11px] font-bold text-brand-textDark uppercase tracking-wider font-display">Área PIX</span>
@@ -227,7 +228,7 @@
 
         <!-- Botão 2: Localização -->
         <a href="https://maps.app.goo.gl/Fi9HXP1NXDEc96ry7" target="_blank" rel="noopener noreferrer" 
-           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-red/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
           <div class="w-10 h-10 rounded-full bg-brand-mutedBlue text-brand-blue flex items-center justify-center mb-2 shadow-inner">
             <i class="fa-solid fa-route text-sm"></i>
           </div>
@@ -237,7 +238,7 @@
 
         <!-- Botão 3: Avaliar -->
         <button onclick="openGoogleReview()" 
-                class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+                class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-red/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
           <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mb-2 shadow-inner">
             <i class="fa-solid fa-star text-xs"></i>
           </div>
@@ -247,7 +248,7 @@
 
         <!-- Botão 4: Instagram -->
         <a href="https://www.instagram.com/radarcelulares/" target="_blank" rel="noopener noreferrer" 
-           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-orange/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
+           class="flex flex-col items-center justify-center p-4 bg-brand-card hover:bg-brand-bg active:scale-95 border border-brand-mutedBlue hover:border-brand-red/40 rounded-2xl shadow-sm transition-all duration-200 text-center group">
           <div class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mb-2 shadow-inner">
             <i class="fa-brands fa-instagram text-base"></i>
           </div>
@@ -258,13 +259,13 @@
       </div>
     </section>
 
-    <!-- ASSISTENTE DE DIAGNÓSTICO INTELIGENTE -->
+    <!-- FUNÇÃO INOVADORA: ASSISTENTE DE DIAGNÓSTICO INTELIGENTE -->
     <section id="diagnostico" class="max-w-4xl mx-auto px-4 py-8 reveal">
-      <div class="bg-brand-card rounded-3xl border border-brand-orange/25 p-6 md:p-8 shadow-md relative overflow-hidden">
-        <div class="absolute top-0 right-0 p-4 font-mono text-[9px] text-brand-orange/40 font-bold hidden sm:block">[ REPARO INTERATIVO ]</div>
+      <div class="bg-brand-card rounded-3xl border border-brand-red/25 p-6 md:p-8 shadow-md relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 font-mono text-[9px] text-brand-red/40 font-bold hidden sm:block">[ REPARO INTERATIVO ]</div>
         
         <div class="text-center md:text-left mb-6">
-          <span class="text-xs uppercase tracking-wider text-brand-orange font-bold font-display block">Tecnologia Inteligente</span>
+          <span class="text-xs uppercase tracking-wider text-brand-red font-bold font-display block">Tecnologia Inteligente</span>
           <h2 class="text-xl md:text-2xl font-display font-bold text-brand-textDark mt-1">Diagnóstico Rápido Online</h2>
           <p class="text-xs text-brand-textMuted mt-1">Selecione o seu aparelho e o sintoma para obter uma estimativa de reparo em tempo real.</p>
         </div>
@@ -286,7 +287,7 @@
 
             <div>
               <label class="block text-[11px] font-bold text-brand-textDark mb-1.5 uppercase tracking-wider font-display">2. Principal Sintoma</label>
-              <select id="symptomSelect" class="w-full p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl text-xs text-brand-textDark focus:outline-none focus:ring-1 focus:ring-brand-orange">
+              <select id="symptomSelect" class="w-full p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl text-xs text-brand-textDark focus:outline-none focus:ring-1 focus:ring-brand-red">
                 <option value="">Selecione o problema...</option>
                 <option value="tela">Tela Quebrada / Sem Toque</option>
                 <option value="bateria">Bateria descarrega rápido / Não carrega</option>
@@ -301,13 +302,13 @@
           <!-- Diagnóstico Adaptável sem tempo estimado e sem função de voucher -->
           <div class="bg-brand-bg border border-brand-mutedBlue p-5 rounded-2xl flex flex-col justify-between h-full min-h-[220px]">
             <div id="diagnosticPlaceholder" class="text-center my-auto">
-              <i class="fa-solid fa-wand-magic-sparkles text-2xl text-brand-orange/40 mb-2"></i>
+              <i class="fa-solid fa-wand-magic-sparkles text-2xl text-brand-red/40 mb-2"></i>
               <p class="text-xs text-brand-textMuted font-medium">Selecione a marca e o sintoma para calcular o diagnóstico.</p>
             </div>
 
             <div id="diagnosticResult" class="hidden space-y-4">
               <div class="border-b border-brand-mutedBlue pb-2">
-                <span class="text-[9px] font-mono uppercase bg-brand-lightOrange text-brand-orange px-2 py-0.5 rounded-md font-bold">Diagnóstico Estimado</span>
+                <span class="text-[9px] font-mono uppercase bg-brand-lightRed text-brand-red px-2 py-0.5 rounded-md font-bold">Diagnóstico Estimado</span>
                 <p id="diagTitle" class="text-xs font-bold text-brand-textDark mt-1.5"></p>
                 <p id="diagDesc" class="text-xs text-brand-textMuted mt-1 leading-relaxed"></p>
               </div>
@@ -328,7 +329,7 @@
     <!-- PAINEL DE SERVIÇOS -->
     <section id="servicos" class="max-w-5xl mx-auto px-4 py-8 reveal">
       <div class="text-center max-w-xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-wider text-brand-orange font-bold font-display block mb-1">// Catálogo Geral</span>
+        <span class="text-xs uppercase tracking-wider text-brand-red font-bold font-display block mb-1">// Catálogo Geral</span>
         <h2 class="text-2xl font-display font-bold text-brand-textDark">Especialidades da Oficina</h2>
         <p class="text-xs text-brand-textMuted mt-1">Trabalhamos com agilidade e os melhores componentes para o seu aparelho.</p>
       </div>
@@ -336,7 +337,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Serviço 1 -->
-        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-orange/30 shadow-sm glow-brand-hover flex flex-col justify-between">
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-red/30 shadow-sm glow-brand-hover flex flex-col justify-between">
           <div class="space-y-3">
             <div class="w-10 h-10 rounded-xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center text-lg">
               <i class="fa-solid fa-mobile-screen-button"></i>
@@ -344,13 +345,13 @@
             <h3 class="text-sm font-bold font-display text-brand-textDark uppercase tracking-wider">Substituição de Tela</h3>
             <p class="text-xs text-brand-textMuted leading-relaxed">Reparo rápido de displays trincados, quebrados ou sem sensibilidade ao toque. Opções com fidelidade de cores e garantia de 90 dias.</p>
           </div>
-          <button onclick="openWhatsAppBudget('Troca de Tela')" class="mt-4 text-[10px] font-bold text-brand-orange uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-orangeHover transition-colors">
+          <button onclick="openWhatsAppBudget('Troca de Tela')" class="mt-4 text-[10px] font-bold text-brand-red uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-redHover transition-colors">
             Fazer Orçamento <i class="fa-solid fa-chevron-right text-[8px]"></i>
           </button>
         </div>
 
         <!-- Serviço 2 -->
-        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-orange/30 shadow-sm glow-brand-hover flex flex-col justify-between">
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-red/30 shadow-sm glow-brand-hover flex flex-col justify-between">
           <div class="space-y-3">
             <div class="w-10 h-10 rounded-xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center text-lg">
               <i class="fa-solid fa-battery-three-quarters"></i>
@@ -358,13 +359,13 @@
             <h3 class="text-sm font-bold font-display text-brand-textDark uppercase tracking-wider">Troca de Bateria</h3>
             <p class="text-xs text-brand-textMuted leading-relaxed">Troca de baterias gastas, estufadas ou que descarregam rapidamente. Recuperamos a saúde energética do seu smartphone no mesmo dia.</p>
           </div>
-          <button onclick="openWhatsAppBudget('Troca de Bateria')" class="mt-4 text-[10px] font-bold text-brand-orange uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-orangeHover transition-colors">
+          <button onclick="openWhatsAppBudget('Troca de Bateria')" class="mt-4 text-[10px] font-bold text-brand-red uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-redHover transition-colors">
             Fazer Orçamento <i class="fa-solid fa-chevron-right text-[8px]"></i>
           </button>
         </div>
 
         <!-- Serviço 3 -->
-        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-orange/30 shadow-sm glow-brand-hover flex flex-col justify-between">
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-red/30 shadow-sm glow-brand-hover flex flex-col justify-between">
           <div class="space-y-3">
             <div class="w-10 h-10 rounded-xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center text-lg">
               <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -372,13 +373,13 @@
             <h3 class="text-sm font-bold font-display text-brand-textDark uppercase tracking-wider">Reparos em Placas</h3>
             <p class="text-xs text-brand-textMuted leading-relaxed">Procedimentos avançados de microssoldagem, desoxidação por água, reparo em slots de carga e botões físicos.</p>
           </div>
-          <button onclick="openWhatsAppBudget('Reparo em Placas')" class="mt-4 text-[10px] font-bold text-brand-orange uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-orangeHover transition-colors">
+          <button onclick="openWhatsAppBudget('Reparo em Placas')" class="mt-4 text-[10px] font-bold text-brand-red uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-redHover transition-colors">
             Fazer Orçamento <i class="fa-solid fa-chevron-right text-[8px]"></i>
           </button>
         </div>
 
         <!-- Serviço 4 -->
-        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-orange/30 shadow-sm glow-brand-hover flex flex-col justify-between">
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-red/30 shadow-sm glow-brand-hover flex flex-col justify-between">
           <div class="space-y-3">
             <div class="w-10 h-10 rounded-xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center text-lg">
               <i class="fa-solid fa-shop"></i>
@@ -386,13 +387,13 @@
             <h3 class="text-sm font-bold font-display text-brand-textDark uppercase tracking-wider">Venda de Aparelhos</h3>
             <p class="text-xs text-brand-textMuted leading-relaxed">Encontre smartphones novos lacrados ou seminovos revisados pela nossa assistência técnica, com procedência garantida.</p>
           </div>
-          <button onclick="openWhatsAppBudget('Aparelhos')" class="mt-4 text-[10px] font-bold text-brand-orange uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-orangeHover transition-colors">
+          <button onclick="openWhatsAppBudget('Aparelhos')" class="mt-4 text-[10px] font-bold text-brand-red uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-redHover transition-colors">
             Consultar Estoque <i class="fa-solid fa-chevron-right text-[8px]"></i>
           </button>
         </div>
 
         <!-- Serviço 5 -->
-        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-orange/30 shadow-sm glow-brand-hover flex flex-col justify-between">
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-red/30 shadow-sm glow-brand-hover flex flex-col justify-between">
           <div class="space-y-3">
             <div class="w-10 h-10 rounded-xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center text-lg">
               <i class="fa-solid fa-plug"></i>
@@ -400,13 +401,13 @@
             <h3 class="text-sm font-bold font-display text-brand-textDark uppercase tracking-wider">Capas e Carregadores</h3>
             <p class="text-xs text-brand-textMuted leading-relaxed">Acessórios robustos de proteção e carregadores rápidos homologados. Proteja seu investimento contra quebras de displays.</p>
           </div>
-          <button onclick="openWhatsAppBudget('Acessórios')" class="mt-4 text-[10px] font-bold text-brand-orange uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-orangeHover transition-colors">
+          <button onclick="openWhatsAppBudget('Acessórios')" class="mt-4 text-[10px] font-bold text-brand-red uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-redHover transition-colors">
             Ver Modelos <i class="fa-solid fa-chevron-right text-[8px]"></i>
           </button>
         </div>
 
         <!-- Serviço 6 -->
-        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-orange/30 shadow-sm glow-brand-hover flex flex-col justify-between">
+        <div class="bg-brand-card p-6 rounded-2xl border border-brand-mutedBlue hover:border-brand-red/30 shadow-sm glow-brand-hover flex flex-col justify-between">
           <div class="space-y-3">
             <div class="w-10 h-10 rounded-xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center text-lg">
               <i class="fa-solid fa-glasses"></i>
@@ -414,7 +415,7 @@
             <h3 class="text-sm font-bold font-display text-brand-textDark uppercase tracking-wider">Óculos & Cosméticos</h3>
             <p class="text-xs text-brand-textMuted leading-relaxed">Conheça também nossa ala dedicada de óculos de grau/sol e cosméticos de marcas confiáveis para sua comodidade.</p>
           </div>
-          <button onclick="openWhatsAppBudget('Óculos e Cosméticos')" class="mt-4 text-[10px] font-bold text-brand-orange uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-orangeHover transition-colors">
+          <button onclick="openWhatsAppBudget('Óculos e Cosméticos')" class="mt-4 text-[10px] font-bold text-brand-red uppercase tracking-wider font-display flex items-center gap-1.5 hover:text-brand-redHover transition-colors">
             Falar no WhatsApp <i class="fa-solid fa-chevron-right text-[8px]"></i>
           </button>
         </div>
@@ -425,7 +426,7 @@
     <!-- HISTÓRIA E PIONEIRISMO (QUEM SOMOS) -->
     <section id="sobre" class="max-w-5xl mx-auto px-4 py-8 md:py-16 reveal">
       <div class="bg-brand-card rounded-3xl p-6 md:p-12 shadow-sm border border-brand-mutedBlue flex flex-col md:flex-row items-center gap-8 md:gap-12 relative overflow-hidden">
-        <div class="absolute -top-6 -right-6 w-16 h-16 rounded-full border border-brand-orange/10 pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute -top-6 -right-6 w-16 h-16 rounded-full border border-brand-red/10 pointer-events-none" aria-hidden="true"></div>
 
         <div class="w-48 h-64 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 border border-brand-blue/15 bg-brand-bg relative">
           <img src="ivan.jpeg" alt="Ivan José Vieira" class="w-full h-full object-cover object-center">
@@ -459,11 +460,11 @@
             <div class="space-y-3 text-xs text-brand-textDark pt-2 font-mono font-bold">
               <div class="flex justify-between border-b border-dashed border-brand-mutedBlue pb-2.5">
                 <span class="font-semibold">Segunda a Sexta-feira</span>
-                <span class="text-brand-orange font-bold">08:00 às 18:00</span>
+                <span class="text-brand-red font-bold">08:00 às 18:00</span>
               </div>
               <div class="flex justify-between border-b border-dashed border-brand-mutedBlue pb-2.5">
                 <span class="font-semibold">Sábado</span>
-                <span class="text-brand-orange font-bold">08:00 às 13:00</span>
+                <span class="text-brand-red font-bold">08:00 às 13:00</span>
               </div>
               <div class="flex justify-between pb-1">
                 <span class="font-semibold">Domingo</span>
@@ -503,7 +504,7 @@
 
       <div class="max-w-5xl mx-auto px-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div class="text-left">
-          <span class="text-xs uppercase tracking-wider text-brand-orange font-bold block mb-1 font-mono">// AVALIAÇÕES DE CLIENTES</span>
+          <span class="text-xs uppercase tracking-wider text-brand-red font-bold block mb-1 font-mono">// AVALIAÇÕES DE CLIENTES</span>
           <h2 class="text-2xl font-display text-brand-textDark font-bold uppercase">Opiniões de quem confia</h2>
         </div>
         <button onclick="openGoogleReview()" class="text-xs font-display uppercase tracking-wider text-brand-blue font-bold bg-brand-mutedBlue border border-brand-blue/20 px-4 py-2 rounded-full hover:bg-brand-blue hover:text-white transition-colors">
@@ -586,7 +587,7 @@
               <p class="text-xs text-brand-textDark italic leading-relaxed font-medium">"Levei meu celular condenado por outros, eles arrumaram e ficou top."</p>
             </div>
             <div class="flex items-center gap-3 mt-4 pt-3 border-t border-brand-blue/15">
-              <div class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm font-mono">J</div>
+              <div class="w-8 h-8 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xs uppercase shadow-sm font-mono font-bold">J</div>
               <div>
                 <h4 class="text-xs font-bold text-brand-textDark">Joana NOGUEIRA</h4>
                 <p class="text-[9px] text-brand-textMuted uppercase tracking-wider font-semibold font-mono">Avaliação Google</p>
@@ -602,12 +603,12 @@
     <section class="max-w-5xl mx-auto px-4 pb-12 reveal">
       <div class="bg-brand-card p-6 md:p-8 rounded-[24px] border border-brand-mutedBlue shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div class="space-y-2">
-          <span class="text-[9px] uppercase tracking-widest text-brand-orange font-bold block font-mono">// CONECTE CONOSCO</span>
+          <span class="text-[9px] uppercase tracking-widest text-brand-red font-bold block font-mono">// CONECTE CONOSCO</span>
           <h3 class="text-lg font-display text-brand-textDark font-bold uppercase">Siga @radarcelulares no Instagram</h3>
           <p class="text-xs text-brand-textMuted max-w-lg">Acompanhe dicas diárias de proteção, novos aparelhos em estoque e serviços da nossa bancada.</p>
         </div>
         <a href="https://www.instagram.com/radarcelulares/" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-orange hover:bg-brand-orangeHover text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-md shrink-0 font-display">
+           class="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs uppercase tracking-widest rounded-full transition-all shadow-md shrink-0 font-display">
           <i class="fa-brands fa-instagram text-sm"></i> @radarcelulares
         </a>
       </div>
@@ -617,27 +618,27 @@
     <footer class="bg-brand-card text-brand-textDark py-12 px-4 border-t border-brand-mutedBlue text-center">
       <div class="max-w-5xl mx-auto flex flex-col items-center gap-6">
         <div class="h-10">
-          <img src="radar.png" alt="Radar Celulares" class="h-full w-auto object-contain mx-auto">
+          <img src="logo.png" alt="Radar Celulares" class="h-full w-auto object-contain mx-auto">
         </div>
         <p class="text-[10px] text-brand-textMuted leading-relaxed uppercase tracking-wider font-mono font-semibold">
           [ CONFIANÇA • RAPIDEZ • QUALIDADE ]
         </p>
         <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold font-display">
-          <a href="#diagnostico" class="hover:text-brand-orange transition-colors">Orçamentos</a>
-          <a href="https://maps.app.goo.gl/Fi9HXP1NXDEc96ry7" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors">Localização</a>
-          <a href="#servicos" class="hover:text-brand-orange transition-colors">Serviços</a>
-          <button onclick="openGoogleReview()" class="hover:text-brand-orange transition-colors">Avaliar</button>
+          <a href="#diagnostico" class="hover:text-brand-red transition-colors">Orçamentos</a>
+          <a href="https://maps.app.goo.gl/Fi9HXP1NXDEc96ry7" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors">Localização</a>
+          <a href="#servicos" class="hover:text-brand-red transition-colors">Serviços</a>
+          <button onclick="openGoogleReview()" class="hover:text-brand-red transition-colors">Avaliar</button>
         </div>
-        <div class="w-16 h-[1px] bg-brand-orange/20"></div>
+        <div class="w-16 h-[1px] bg-brand-red/20"></div>
         <div class="text-[10px] text-brand-textMuted space-y-2">
           <p class="font-medium">Radar Celulares | Assistência Especializada e Vendas</p>
           <p>Av. Hermógenes Coelho, nº 2056 - Centro - São Luís de Montes Belos - GO</p>
           <p>&copy; <span id="currentYear"></span> Radar Celulares. Todos os direitos reservados.</p>
           
-          <!-- CRÉDITO DESENVOLVEDOR JOÃO VITOR S N (Link Correto) -->
+          <!-- CRÉDITO DESENVOLVEDOR JOÃO VITOR S N (Atualizado) -->
           <p class="pt-2 text-[9px] tracking-wider text-brand-textMuted font-mono">
-            Experiência Digital criada por <strong class="text-brand-orange">João Vitor S N</strong> • 
-            <a href="https://jovidigital.vercel.app/" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-orange transition-colors font-bold">Crie seu site aqui</a>
+            Experiência Digital criada por <strong class="text-brand-red">João Vitor S N</strong> • 
+            <a href="https://jovidigital.vercel.app/" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-red transition-colors font-bold">Crie seu site aqui</a>
           </p>
         </div>
       </div>
@@ -658,7 +659,7 @@
   <div id="pixModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
     <div class="bg-brand-card w-full max-w-sm rounded-3xl overflow-hidden shadow-xl border border-brand-mutedBlue transform scale-95 transition-transform duration-300">
       <div class="bg-brand-bg p-5 text-center relative border-b border-brand-mutedBlue">
-        <button onclick="closePixModal()" class="absolute top-4 right-4 text-brand-textMuted hover:text-brand-orange transition-colors">
+        <button onclick="closePixModal()" class="absolute top-4 right-4 text-brand-textMuted hover:text-brand-red transition-colors">
           <i class="fa-solid fa-xmark text-lg"></i>
         </button>
         <div class="w-11 h-11 rounded-2xl bg-brand-mutedBlue text-brand-blue flex items-center justify-center mx-auto mb-2 text-xl">
@@ -674,7 +675,7 @@
           <p><strong class="text-brand-textDark">Banco:</strong> Mercado Pago IP Ltda.</p>
         </div>
         <button id="copyPhonePixBtn" onclick="copyPhoneKeyOnly()" 
-                class="w-full py-3 px-4 bg-brand-orange hover:bg-brand-orangeHover text-white rounded-xl text-xs font-display font-bold tracking-widest uppercase transition-all flex items-center justify-center gap-2">
+                class="w-full py-3 px-4 bg-brand-red hover:bg-brand-redHover text-white rounded-xl text-xs font-display font-bold tracking-widest uppercase transition-all flex items-center justify-center gap-2">
           <i class="fa-solid fa-copy"></i> Copiar Chave Celular
         </button>
         <div class="relative flex py-1 items-center">
@@ -714,11 +715,11 @@
 
 
   <!-- MODAL DE COMPARTILHAMENTO -->
-  <div id="shareModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
+  <div id="shareModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 font-sans">
     <div class="bg-brand-card w-full max-w-sm rounded-3xl overflow-hidden shadow-xl border border-brand-mutedBlue transform scale-95 transition-transform duration-300 flex flex-col">
       <div class="p-5 flex items-center justify-between border-b border-brand-mutedBlue bg-brand-bg">
         <h4 class="font-display text-xs text-brand-textDark font-bold uppercase tracking-wider">Compartilhar Cartão</h4>
-        <button onclick="closeShareModal()" class="w-8 h-8 rounded-full bg-brand-card flex items-center justify-center text-brand-textMuted hover:text-brand-orange border border-brand-mutedBlue shadow-sm transition-all" aria-label="Fechar">
+        <button onclick="closeShareModal()" class="w-8 h-8 rounded-full bg-brand-card flex items-center justify-center text-brand-textMuted hover:text-brand-red border border-brand-mutedBlue shadow-sm transition-all" aria-label="Fechar">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
@@ -756,6 +757,8 @@
             </div>
           </div>
         </div>
+
+        <!-- WhatsApp Compartilhar -->
         <a id="shareWaLink" href="#" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
           <div class="flex items-center gap-3">
@@ -766,6 +769,55 @@
           </div>
           <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
         </a>
+
+        <!-- Telegram Compartilhar -->
+        <a id="shareTgLink" href="#" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-sky-100 flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+              <i class="fa-solid fa-paper-plane text-sm"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-textDark">Compartilhar no Telegram</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- X (antigo Twitter) Compartilhar -->
+        <a id="shareXLink" href="#" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-neutral-900 flex items-center justify-center text-white group-hover:bg-neutral-800 transition-colors">
+              <i class="fa-brands fa-x-twitter text-xs"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-textDark">Compartilhar no X (Twitter)</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- LinkedIn Compartilhar -->
+        <a id="shareInLink" href="#" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 flex items-center justify-center text-blue-700 group-hover:bg-blue-700 group-hover:text-white transition-colors">
+              <i class="fa-brands fa-linkedin-in text-sm"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-textDark">Compartilhar no LinkedIn</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- E-mail Compartilhar -->
+        <a id="shareEmailLink" href="#" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between p-3 bg-brand-bg hover:bg-brand-mutedBlue border border-brand-mutedBlue rounded-xl transition-all group">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-700 group-hover:text-white transition-colors">
+              <i class="fa-regular fa-envelope text-sm"></i>
+            </div>
+            <span class="text-xs font-bold text-brand-textDark">Enviar por E-mail</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-brand-blue transform group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
         <div class="pt-4 border-t border-brand-mutedBlue">
           <div class="flex items-center justify-between p-3 bg-brand-bg border border-brand-mutedBlue rounded-xl">
             <span id="shareUrlDisplay" class="text-[10px] text-brand-textMuted truncate select-all max-w-[200px] font-mono"></span>
@@ -790,7 +842,7 @@
         <p class="text-xs text-brand-textMuted">Iniciando chat com Ivan.</p>
       </div>
       <div class="w-36 h-[3px] bg-brand-mutedBlue rounded-full overflow-hidden relative">
-        <div class="absolute inset-y-0 left-0 bg-brand-orange w-full transform origin-left scale-x-0 transition-transform duration-1200 ease-out" id="waProgressBar"></div>
+        <div class="absolute inset-y-0 left-0 bg-brand-red w-full transform origin-left scale-x-0 transition-transform duration-1200 ease-out" id="waProgressBar"></div>
       </div>
     </div>
   </div>
@@ -833,26 +885,6 @@
         title: "Análise Técnica Presencial",
         desc: "Nossos técnicos analisarão a placa lógica, os barramentos de energia e as conexões de circuito para identificar a falha.",
         complexity: "Variável"
-      }
-    };
-
-    // BASE DE DADOS DO PROTOCOLO RADAR (TESTES DE BANCADA)
-    const protocolDatabase = {
-      "1": {
-        title: "1. Corrente de Repouso da Placa",
-        desc: "Análise realizada com fonte de alimentação de precisão de 4 dígitos. Garante que o processador e os circuitos secundários não consumam energia em stand-by, eliminando falhas de descarga fantasma da bateria."
-      },
-      "2": {
-        title: "2. Calibração e Grade do Touch",
-        desc: "Mapeamento completo da tela substituída por meio de um software de diagnóstico de grade. Testamos cada quadrante para assegurar que não haja 'toques fantasmas' ou pontos cegos de digitação."
-      },
-      "3": {
-        title: "3. Teste do Sensor de Proximidade",
-        desc: "Verificação funcional do infravermelho de bloqueio de tela. Essencial para garantir que a tela apague corretamente ao encostar o aparelho no ouvido durante ligações ou ao escutar áudios no WhatsApp."
-      },
-      "4": {
-        title: "4. Amperagem de Carga e Conector",
-        desc: "Medição de entrada de energia via USB Doctor. Testamos o conector de carga sob tensões variadas para verificar se o protocolo de 'Carga Rápida' (Fast Charge) está ativo e se a placa-mãe aceita a corrente sem superaquecer."
       }
     };
 
@@ -906,6 +938,10 @@
       const encodedUrl = encodeURIComponent(siteUrl);
 
       document.getElementById('shareWaLink').href = `https://api.whatsapp.com/send?text=${encodedMsg}`;
+      document.getElementById('shareTgLink').href = `https://t.me/share/url?url=${encodedUrl}&text=${encodedMsg}`;
+      document.getElementById('shareXLink').href = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedMsg}`;
+      document.getElementById('shareInLink').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+      document.getElementById('shareEmailLink').href = `mailto:?subject=${encodeURIComponent("Radar Celulares - Assistência Técnica")}&body=${encodedMsg}`;
 
       // VINCULAR EVENTOS DO ASSISTENTE DE DIAGNÓSTICO
       const brandButtons = document.querySelectorAll('#brandSelector button');
@@ -925,18 +961,9 @@
       if (sendDiagBtn) {
         sendDiagBtn.addEventListener('click', sendDiagnosticToWhatsApp);
       }
-
-      // EVENTO DO PROTOCOLO DE TESTE INTERATIVO
-      const protocolButtons = document.querySelectorAll('#checklistContainer button');
-      protocolButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const step = btn.getAttribute('data-step');
-          selectProtocolStep(step, btn);
-        });
-      });
     });
 
-    // SISTEMA MONITOR DE FUNCIONAMENTO REAL-TIME
+    // SISTEMA MONITOR DE FUNCIONAMENTO REAL-TIME (Atualizado: LOJA ABERTA / LOJA FECHADA)
     function updateShopStatus() {
       const indicator = document.getElementById('statusIndicator');
       const text = document.getElementById('statusText');
@@ -968,10 +995,10 @@
 
       if (isOpen) {
         indicator.className = "inline-block w-2.5 h-2.5 rounded-full animate-pulse bg-emerald-500";
-        text.innerHTML = "LABORATÓRIO ABERTO — Fale com o Ivan no WhatsApp agora para agendar";
+        text.innerHTML = "LOJA ABERTA — Fale com o Ivan no WhatsApp agora para agendar";
       } else {
         indicator.className = "inline-block w-2.5 h-2.5 rounded-full bg-rose-500";
-        text.innerHTML = "LABORATÓRIO FECHADO — Deixe sua mensagem e responderemos assim que abrirmos";
+        text.innerHTML = "LOJA FECHADA — Deixe sua mensagem e responderemos assim que abrirmos";
       }
     }
 
@@ -983,12 +1010,12 @@
       selectedBrand = brand;
       const buttons = document.querySelectorAll('#brandSelector button');
       buttons.forEach(btn => {
-        btn.classList.remove('bg-brand-orange', 'text-white', 'border-brand-orange');
+        btn.classList.remove('bg-brand-red', 'text-white', 'border-brand-red');
         btn.classList.add('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
       });
       
       if (clickedBtn) {
-        clickedBtn.classList.add('bg-brand-orange', 'text-white', 'border-brand-orange');
+        clickedBtn.classList.add('bg-brand-red', 'text-white', 'border-brand-red');
         clickedBtn.classList.remove('bg-brand-bg', 'text-brand-textDark', 'border-brand-mutedBlue');
       }
       updateDiagnostic();
@@ -1026,7 +1053,7 @@
       triggerWhatsAppRedirect(textMessage);
     }
 
-    // CONTROLE DOS DEPOIMENTOS (DRAG & AUTO-RECOVERY)
+    // CONTROLE DOS DEPOIMENTOS
     function initInteractiveCarousel() {
       const carousel = document.getElementById('reviewsCarousel');
       if (!carousel) return;
@@ -1146,7 +1173,7 @@
 
     function openWhatsAppBudget(servicoName) {
       let msg = "";
-      if (servicoName === "Atendimento Geral" || servicoName === "Suporte") {
+      if (servicoName === "Atendimento Geral" || servicoName === "Suporte" || servicoName === "Atendimento Hero") {
         msg = "Olá, Ivan! Gostaria de conversar sobre um serviço no meu dispositivo.";
       } else {
         msg = `Olá! Visitei seu site e gostaria de tirar dúvidas sobre o serviço de: ${servicoName}.`;
@@ -1285,17 +1312,16 @@ END:VCARD`;
         const btn = document.getElementById('copyPhonePixBtn');
         const originalText = btn.innerHTML;
         btn.innerHTML = '<i class="fa-solid fa-check"></i> Chave Copiada!';
-        btn.classList.remove('bg-brand-orange');
+        btn.classList.remove('bg-brand-red');
         btn.classList.add('bg-emerald-600');
         setTimeout(() => {
           btn.innerHTML = originalText;
           btn.classList.remove('bg-emerald-600');
-          btn.classList.add('bg-brand-orange');
+          btn.classList.add('bg-brand-red');
         }, 2000);
       });
     }
 
-    // ALGORITMO CRC-16 CCITT
     function calculateCRC16(str) {
       let crc = 0xFFFF;
       for (let c = 0; c < str.length; c++) {
